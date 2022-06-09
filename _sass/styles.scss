@@ -22,7 +22,7 @@ $micro-leading: 0.66em;
 $small-leading: 1.1em;
 $medium-leading: 1.4em;
 $large-leading: 1.66em;
-$huge-leading: 2.2em;
+$huge-leading: 2.4em;
 
 // Declare other styles
 $underline: 1px solid $cyanA700;
@@ -296,7 +296,7 @@ sub {
 }
 
 .entry {
-   margin-bottom: $large-leading*2;
+   margin-bottom: $huge-leading*2;
    img {
       margin-top: $huge-leading;
       margin-bottom: $large-leading;
@@ -334,9 +334,9 @@ sub {
 
 .block-margin {
    margin-top: $huge-leading;
-   margin-bottom: $small-leading;
+   margin-bottom: $large-leading;
    @include media($landscape) {
-      margin-bottom: $large-leading*2;
+      margin-bottom: $huge-leading*2.4;
    }
 }
 
@@ -354,8 +354,8 @@ sub {
    }
 }
 
-#fix-reduced-margin {
-   @include media($landscape){
-      margin-bottom: $huge-leading;
-   }
-}
+// #fix-reduced-margin {
+//    @include media($landscape){
+//       margin-bottom: $huge-leading;
+//    }
+// }
