@@ -3,7 +3,7 @@ layout: blog-post
 label: blog-post
 title: Looking for a Warm Fuzzy Feeling&#58; Challenges of Designing an AI Platform for Drug Discovery
 date: November 2019
-link: https://benevolent.ai/video/challenges-of-designing-an-ai-platform-for-drug-discovery-w/-marek-kultys1
+link: https://www.benevolent.com/news/challenges-of-designing-an-ai-platform-for-drug-discovery-w-marek-kultys
 image:
 excerpt_separator: <!--more-->
 published: true
@@ -19,4 +19,4 @@ I was invited to speak at <a href="https://wudsilesia.pl/">WUD Silesia</a> 2019 
 
 <!--more-->
 
-[Talk at WUD Silesia 2019: Looking for a Warm Fuzzy Feeling: Challenges of Designing an AI Platform for Drug Discovery](https://benevolent.ai/video/challenges-of-designing-an-ai-platform-for-drug-discovery-w/-marek-kultys1)
+[Talk at WUD Silesia 2019: Looking for a Warm Fuzzy Feeling: Challenges of Designing an AI Platform for Drug Discovery](https://www.benevolent.com/news/challenges-of-designing-an-ai-platform-for-drug-discovery-w-marek-kultys)
