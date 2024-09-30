@@ -1,5 +1,5 @@
 home:
-   headline: I design tools that place the power of AI in the hands of expert users. I specialise in digital health and life sciences.
+   headline: I design digital tools for people who use them to do incredible things — understand biology, create new medicines, treat disease, save patient lives.
    link: /
 
 work:
@@ -17,6 +17,11 @@ influences:
 contact:
    headline: Get in touch
    link: /contact
+
+project-evinova:
+   headline: Evinova
+   exheadline: AstraZeneca
+   link: https://evinova.com/
 
 project-benevolent:
    headline: BenevolentAI
