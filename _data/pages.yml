@@ -18,6 +18,11 @@ contact:
    headline: Get in touch
    link: /contact
 
+project-evinova:
+   headline: Evinova
+   exheadline: AstraZeneca
+   link: https://evinova.com/
+
 project-benevolent:
    headline: BenevolentAI
    link: https://benevolent.ai/
