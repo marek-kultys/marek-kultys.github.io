@@ -1,7 +1,7 @@
 ---
 layout: blog-post
 label: blog-post
-title: Speaking on the Health Tech Matters podcast
+title: Speaking on the Health Tech Matters Podcast
 date: August 2021
 link: https://anchor.fm/health-tech-matters/episodes/BenevolentAI--Marek-Kultys-On-Design-for-AI-Drug-Discovery-Platform-e161sel
 excerpt_separator: <!--more-->
