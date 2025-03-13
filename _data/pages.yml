@@ -2,6 +2,10 @@ home:
    headline: I design digital tools for people who use them to do incredible things — understand biology, create new medicines, treat disease, save patient lives.
    link: /
 
+case-studies:
+   headline: How I solve problems
+   link: /case-studies
+
 work:
    headline: Work that I'm proud of
    link: /work
