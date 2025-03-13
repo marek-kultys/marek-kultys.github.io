@@ -2,6 +2,7 @@
    <div class="container">
       <div class="container-two-third shift">
          <ul>
+            <!-- <li {% if page.label == 'case-studies' or page.label contains 'project' %} class="strong" {% endif %}><a href="{{ site.data.pages.case-studies.link }}">{{ site.data.pages.case-studies.headline }}</a></li> -->
             <li {% if page.label == 'work' or page.label contains 'project' %} class="strong" {% endif %}><a href="{{ site.data.pages.work.link }}">{{ site.data.pages.work.headline }}</a></li>
             <li {% if page.label == 'blog' %} class="strong" {% endif %}><a href="{{ site.data.pages.blog.link }}">{{ site.data.pages.blog.headline }}</a></li>
             <li {% if page.label == 'influences' %} class="strong" {% endif %}><a href="{{ site.data.pages.influences.link }}">{{ site.data.pages.influences.headline }}</a></li>
