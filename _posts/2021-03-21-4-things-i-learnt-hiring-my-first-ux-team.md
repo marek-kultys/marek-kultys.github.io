@@ -1,7 +1,7 @@
 ---
 layout: blog-post
 label: blog-post
-title: Four things I learnt hiring my first UX team
+title: Four Things I Learnt Hiring My First UX Team
 date: March 2021
 link: https://marekkultys.medium.com/4-things-i-learnt-when-hiring-my-first-ux-team-ebfc7bf39cc
 image: /img/posts/21-03-2021/hiring.png
