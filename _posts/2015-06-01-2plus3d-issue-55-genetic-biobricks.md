@@ -6,7 +6,7 @@ date: June 2015
 image: /img/posts/01-06-2015/2plus3d-issue-55-genetic-biobricks.jpg
 published: true
 excerpt_separator: <!--more-->
-link: http://localhost:4000/blog/2015/06/01/2plus3d-issue-55-genetic-biobricks/
+link: /blog/2015/06/01/2plus3d-issue-55-genetic-biobricks/
 
 ---
 
