@@ -12,7 +12,7 @@ $cyan50: rgba(224, 247, 250, 1);
 $cyanA700: rgba(0, 200, 230, 1);
 
 // Declare type size
-$font-unit: 1em;
+$font-unit: 1.1em;
 $small-type: 1*$font-unit;
 $medium-type: 1.25*$font-unit;
 $large-type: 1.7*$font-unit;
@@ -166,7 +166,7 @@ sub {
    padding-left: 1em;
    padding-right: 1em;
    @include outer-container(100%);
-   max-width: 1280px;
+   max-width: 1420px;
 }
 
 .container {
