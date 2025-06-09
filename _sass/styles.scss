@@ -183,6 +183,7 @@ sub {
 }
 
 .container {
+   // border: 1px solid blue;
    @include span-columns(12);
    @include shift(0);
    // max-width: 840px;
@@ -192,6 +193,7 @@ sub {
    }
 
    .container-one-third {
+      // border: 1px solid yellow;
       @include span-columns(12);
       @include media($landscape) {
          @include span-columns(4);
@@ -199,6 +201,7 @@ sub {
    }
 
    .container-two-thirds {
+      // border: 1px solid yellow;
       @include span-columns(12);
       @include media($landscape) {
          @include span-columns(8);
@@ -206,6 +209,7 @@ sub {
    }
 
    .container-two-halfs {
+      // border: 1px solid yellow;
       @include span-columns(6);
    }
 }
@@ -313,6 +317,7 @@ sub {
 }
 
 .entry {
+   // border: 1px solid red;
    margin-bottom: $huge-leading*2;
    img {
       margin-top: $huge-leading;
@@ -350,6 +355,7 @@ sub {
 }
 
 .block-margin {
+   // border: 1px dotted black;
    margin-top: $huge-leading;
    margin-bottom: $large-leading;
    @include media($landscape) {
