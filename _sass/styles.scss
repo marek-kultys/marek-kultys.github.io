@@ -134,6 +134,17 @@ ol {
    }
 }
 
+ul {
+   font-weight: 400;
+   font-size: $medium-type;
+   line-height: $large-leading;
+   margin-top: 0.5em;
+   padding-left: 2em;
+   li {
+      margin-bottom: 0.25em;
+   }
+}
+
 img {
    width: 100%;
 }
