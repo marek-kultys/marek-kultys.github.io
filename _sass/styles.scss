@@ -58,6 +58,7 @@ main {
 .footer {
    height: 10em;
    padding-top: 6em;
+   margin-bottom: $large-leading;
    h4 {
       color: $dark-grey;
    }
