@@ -18,11 +18,12 @@ $medium-type: 1.25*$font-unit;
 $large-type: 1.7*$font-unit;
 
 // Declare leading
-$micro-leading: 0.66em;
-$small-leading: 1.1em;
-$medium-leading: 1.4em;
-$large-leading: 1.66em;
-$huge-leading: 2.4em;
+$leading-unit: 1em;
+$micro-leading: 0.66*$leading-unit;
+$small-leading: 1.1*$leading-unit;
+$medium-leading: 1.4*$leading-unit;
+$large-leading: 1.66*$leading-unit;
+$huge-leading: 2.4*$leading-unit;
 
 // Declare other styles
 $underline: 1px solid $cyanA700;
