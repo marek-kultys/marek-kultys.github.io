@@ -149,6 +149,10 @@ ul {
 
 img {
    width: 100%;
+   @include media($portrait) {
+      width: 90%;
+      margin-left: 5%;
+   }
 }
 
 ::-moz-selection { /* Code for Firefox */
