@@ -14,6 +14,7 @@ $cyanA700: rgba(0, 150, 188, 1);
 // Declare type size
 $font-unit: 1.2em;
 $small-type: 1*$font-unit;
+$semi-type: 1.1*$font-unit;
 $medium-type: 1.25*$font-unit;
 $large-type: 1.7*$font-unit;
 
@@ -175,6 +176,12 @@ sub {
 
 .strong {
    font-weight: 600;
+}
+
+.appendix {
+   p, h3, ul {
+      font-size: $semi-type;
+   }
 }
 
 
