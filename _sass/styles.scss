@@ -19,6 +19,7 @@ $large-type: 1.7*$font-unit;
 
 // Declare leading
 $leading-unit: 1em;
+$nano-leading: 0.25*$leading-unit;
 $micro-leading: 0.66*$leading-unit;
 $small-leading: 1.1*$leading-unit;
 $medium-leading: 1.4*$leading-unit;
@@ -132,7 +133,7 @@ ol {
    list-style: none;
    padding-left: 0px;
    li {
-      margin-bottom: 0.25em;
+      margin-bottom: $nano-leading;
    }
 }
 
@@ -140,10 +141,10 @@ ul {
    font-weight: 400;
    font-size: $medium-type;
    line-height: $large-leading;
-   margin-top: 0.5em;
+   margin-bottom: $medium-leading;
    padding-left: 2em;
    li {
-      margin-bottom: 0.25em;
+      margin-bottom: $nano-leading;
    }
 }
 
@@ -167,7 +168,7 @@ img {
 sub {
     vertical-align: baseline;
     position: relative;
-    top: 0.2em;
+    top: $nano-leading;
     right: 0.05em;
     font-size: smaller;
 }
