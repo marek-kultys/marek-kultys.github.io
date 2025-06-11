@@ -1,5 +1,5 @@
 # marek-kultys.github.io
-Personal website for Marek Kultys on GitHub Pages, version 5.0.
+Personal website for Marek Kultys on GitHub Pages, version 5.1.
 
 Built with Jekyll and Neat.
 
