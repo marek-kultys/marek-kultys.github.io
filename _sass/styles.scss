@@ -261,8 +261,7 @@ sub {
    display: none;
    @include media($landscape){
       display: block;
-      max-width: 85%;
-      margin-top: $small-leading;
+      max-width: 100%;
    }
 }
 
