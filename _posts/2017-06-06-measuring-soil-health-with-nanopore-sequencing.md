@@ -4,7 +4,7 @@ label: blog-post
 title: Measuring Soil Health with Nanopore Sequencing
 date: June 2017
 link: https://www.science-practice.com/blog/2017/06/06/minion-soil-metagenomics-experiment/
-image: /img/posts/06-06-2017/healthy-and-diverse.png
+image: /img/posts/06-06-2017/healthy-and-diverse-alpha3.png
 excerpt_separator: <!--more-->
 published: true
 ---
