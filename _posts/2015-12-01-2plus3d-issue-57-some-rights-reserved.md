@@ -3,7 +3,7 @@ layout: blog-post
 label: blog-post
 title: Some Rights Reserved (Pewne prawa zastrzeżone)
 date: December 2015
-image: /img/posts/01-12-2015/2plus3d-issue-57-some-rights-reserved.jpg
+image: /img/posts/01-12-2015/2plus3d-issue-57-some-rights-reserved-alpha2.png
 published: true
 excerpt_separator: <!--more-->
 link: /blog/2015/12/01/2plus3d-issue-57-some-rights-reserved/
