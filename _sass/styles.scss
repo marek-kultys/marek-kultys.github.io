@@ -257,7 +257,7 @@ sub {
    }
 }
 
-.banner-vertical {
+.banner-for-desktop {
    display: none;
    @include media($landscape){
       display: block;
@@ -266,13 +266,13 @@ sub {
    }
 }
 
-.banner-horizontal {
+.banner-for-mobile{
    display: block;
    width: 90vw;
-   max-width: 600px;
-   margin-left: auto;
+   max-width: 90%;
+   margin-left: 5%;
    margin-right: auto;
-   margin-top: $huge-leading;
+   margin-top: $nano-leading;
    margin-bottom: $large-leading;
    @include media($landscape){
       display: none;
