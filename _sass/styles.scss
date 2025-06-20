@@ -11,6 +11,8 @@ $light-grey: rgba(0, 0, 66, 0.25);
 $cyan50: rgba(224, 247, 250, 1);
 $cyanA700: rgba(0, 150, 188, 1);
 
+$miami: linear-gradient(to left, rgba(195,240,246,1), rgba(255,223,199,1));
+
 // Declare type size
 $font-unit: 1.2em;
 $small-type: 1*$font-unit;
@@ -45,7 +47,7 @@ html {
 
 body {
    margin: 0px;
-   background-image: linear-gradient(to left, rgba(195,240,246,1), rgba(255,223,199,1));
+   background-image: $miami;
 }
 
 main {
