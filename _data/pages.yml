@@ -6,27 +6,27 @@ case-study:
    headline: Case studies
    link: /case-studies
    ee:
-      headline: Scaling AI-driven drug discovery with Entity Explorer
+      heading: Scaling AI-driven drug discovery with Entity Explorer
       company: BenevolentAI
       year: 2021
    triage:
-      headline: Accelerating scientific decision-making in Target Triage
+      heading: Accelerating scientific decision-making in Target Triage
       company: BenevolentAI
       year: 2019
    vivli: 
-      headline: Winning stakeholder support for Vivli
+      heading: Winning stakeholder support for Vivli
       company: Science Practice
       year: 2016
    concept2: 
-      headline: Preparing patients for a clinical trial with Concept2
+      heading: Preparing patients for a clinical trial with Concept2
       company: Science Practice
       year: 2017
    sb: 
-      headline: Surfacing hidden patterns in data with Sequence Bundles
+      heading: Surfacing hidden patterns in data with Sequence Bundles
       company: Science Practice
       year: 2013–2014
    immunocore: 
-      headline: Communicating the brand and the science of Immunocore
+      heading: Communicating the brand and the science of Immunocore
       company: Immunocore
       year: 2012
 
