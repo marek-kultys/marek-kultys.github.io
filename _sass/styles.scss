@@ -15,6 +15,7 @@ $miami: linear-gradient(to left, rgba(195,240,246,1), rgba(255,223,199,1));
 
 // Declare type size
 $font-unit: 1.2em;
+$micro-type: 0.75*$font-unit;
 $small-type: 1*$font-unit;
 $semi-type: 1.1*$font-unit;
 $medium-type: 1.25*$font-unit;
@@ -86,6 +87,7 @@ a {
 }
 
 p, h1, h2, h3, h4, ol, ul {
+p, h1, h2, h3, h4, h5, ol, ul, li {
    font-family: 'Barlow', sans-serif;
    color: $black;
    margin: 0px;
@@ -126,6 +128,12 @@ h3 { // used for subtitles
 h4 { // used for post metadata
    font-weight: 200;
    font-size: $small-type;
+   line-height: $medium-leading;
+}
+
+h5 { // used for image annotations
+   font-weight: 200;
+   font-size: $micro-type;
    line-height: $medium-leading;
 }
 
