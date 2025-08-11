@@ -73,6 +73,7 @@ main {
 .secondary-annotation {
    color: $dark-grey;
    text-align: right;
+   margin-top: $small-leading;
 }
 
 
@@ -138,7 +139,7 @@ h4 { // used for post metadata
 h5 { // used for image annotations
    font-weight: 200;
    font-size: $micro-type;
-   line-height: $medium-leading;
+   line-height: $small-leading;
 }
 
 ol {
