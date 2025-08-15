@@ -70,12 +70,6 @@ main {
    }
 }
 
-.secondary-annotation {
-   color: $dark-grey;
-   text-align: right;
-   margin-top: $small-leading;
-}
-
 
 
 
@@ -164,12 +158,10 @@ ul {
    }
 }
 
-img {
-   width: 100%;
-   // @include media($portrait) {
-   //    width: 90%;
-   //    margin-left: 5%;
-   // }
+.secondary-annotation {
+   color: $dark-grey;
+   text-align: right;
+   margin-top: $small-leading;
 }
 
 ::-moz-selection { /* Code for Firefox */
@@ -257,7 +249,15 @@ sub {
 
 
 
-// IMAGES
+// MEDIA
+img {
+   width: 100%;
+   // @include media($portrait) {
+   //    width: 90%;
+   //    margin-left: 5%;
+   // }
+}
+
 .image-link {
    border: none;
    padding-bottom: none;
@@ -297,6 +297,10 @@ sub {
    border: 1px solid $dark-grey;
 }
 
+.shadow {
+   filter: drop-shadow(0 2px 10px $light-grey);
+}
+
 .image-gallery {
    margin-bottom: $small-leading;
 }
@@ -328,8 +332,6 @@ sub {
    padding-bottom: 1.33em;
 }
 
-.shadow {
-   filter: drop-shadow(0 2px 10px $light-grey);
 }
 
 
