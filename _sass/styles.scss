@@ -383,6 +383,10 @@ img {
    padding-bottom: $micro-leading;
 }
 
+.text-only {
+   margin-top: $nano-leading*1.7;
+}
+
 .block-margin {
    // border: 1px dotted black;
    margin-top: $huge-leading;
