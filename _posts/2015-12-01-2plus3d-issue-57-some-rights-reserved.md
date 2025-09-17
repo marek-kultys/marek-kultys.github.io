@@ -15,7 +15,7 @@ For issue #57 of the 2+3D Polish design quarterly, I wrote a practical guide to 
 <!--more-->
 
 <div class="block-margin">
-   <img src="/img/posts/01-12-2015/2plus3d-issue-57-some-rights-reserved.jpg">
+   <img src="/img/posts/01-12-2015/2plus3d-issue-57-some-rights-reserved-alpha2.png" class="shadow">
 </div>
 
 ### O stosowaniu licencji otwartych
@@ -26,7 +26,7 @@ Ten artykuł to też dzieło. Stworzyłem je na zlecenie redakcji 2+3D. Ja jeste
 Tak niestety skończyło wiele moich projektów — zaprezentowane raz podczas konkursu lub korekty na uczelni, do dziś trwają w zakamarkach twardego dysku komputera. Jednak jeden projekt uniknął tego losu. Był to zestaw [diagramów edukacyjno-naukowych](/work/mitosis-and-meiosis) będących częścią mojego dyplomu na ASP w Warszawie, które udostępniłem na warunkach licencji otwartej. Idealnym miejscem na udostępnienie tego typu wizualizacji jest internetowa encyklopedia Wikipedii, gdzie obecnie wykorzystywane są one w dwudziestu dwóch artykułach dostępnych w dwunastu językach (m.in. po polsku, angielsku, holendersku, japońsku, arabsku, tajsku). Udana publikacja w Wikipedii daje wiele osobistej satysfakcji, lecz również wymierne korzyści: pozwala dziełu dotrzeć do milionów użytkowników na całym świecie, podlega ciągłej ocenie i weryfikacji przez moderatorów Wikipedii, inspiruje dzieła pochodne tworzone przez innych użytkowników.
 
 <div class="block-margin">
-   <img src="/img/posts/01-12-2015/meiosis_02-cc-by-sa.png">
+   <img src="/img/posts/01-12-2015/meiosis_02-cc-by-sa.png" class="shadow">
 </div>
 
 Wykonawszy dzieło, twórca może zatem zachować je na własny użytek, sprzedać i przenieść prawa do dzieła na nabywcę, lub udostępnić dzieło na zasadach otwartej licencji, czym umożliwia ludziom na całym świecie legalne użytkowanie, kopiowanie, rozpowszechnianie, modyfikowanie a nawet zarabianie na tym dziele. Określenie zakresu dozwolonego wykorzystania dzieła należy do twórcy, czyli licencjodawcy, i w praktyce polega na wyborze konkretnej licencji oraz umieszczeniu informacji o niej razem z dziełem. Umowa licencyjna zawierana jest automatycznie, z chwilą gdy licencjobiorca zaczyna korzystać z dzieła. Mimo że korzystanie z otwartych licencji jest bardzo proste i nie wymaga pomocy specjalistów, moc prawna licencji otwartych jest taka sama jak innych umów dotyczących własności intelektualnej. W tabeli oraz tekście poniżej zestawienie najpopularniejszych otwartych licencji dostępnych dla różnego typu utworów. Chociaż celem tego artykułu jest przybliżyć twórcom dostępne dla nich licencje (a także w pewnym stopniu zachęcić do ich stosowania), wszystkie przedstawione informacje będą pomocne również tym, którzy chcą korzystać z utworów już opublikowanych na warunkach otwartych licencji. Wszystkim więc życzę uważnej lektury, Udanego korzystania i udostępniania!
@@ -40,7 +40,7 @@ Najbardziej popularną rodziną licencji zabezpieczających interesy twórców s
 Ponieważ cały ruch w stronę otwartych licencji i uwalniania dóbr kultury rozpoczął się w środowisku programistów, którzy chcieli dzielić się pisanym i ulepszanym przez siebie oprogramowaniem, twórcy software’u mają dziś do wyboru szeroki wachlarz opcji. Licencje Eclipse oraz GNU LGPL wymagają zawsze udostępnienia kodu źródłowego. Licencja MIT jest bardzo liberalna i wyjątkowo zwięzła (pełna treść licencji MIT jest krótsza od tego akapitu), co chyba decyduje o jej niesłabnącej popularności. Większość otwartych licencji dedykowanych oprogramowaniu wyraźnie zwalnia twórcę utworu z jakiejkolwiek odpowiedzialności za skutki wykorzystania utworu przez licencjobiorcę. Wreszcie, licencja GNU Affero GPL zawiera postanowienia zrównujące prawo licencjobiorcy do wglądu w kod źródłowy oprogramowania dostępnego zarówno lokalnie (jako kopia zapisana na dysku użytkownika), jak i zdalnie (jako kopia umieszczona na serwerze i obsługiwana np. poprzez internet). Z tego względu w Science Practice, gdzie pracuję jako designer, zdecydowaliśmy się opublikować stworzoną przez nas aplikację do wizualizacji danych bioinformatycznych [“Sequence Bundles“](http://science-practice.com/projects/sequence-bundles) na zasadach GNU Affero GPL. Bardzo dobre zestawienie wszystkich najważniejszych licencji software’owych opracował GitHub na stronie [www.choosealicense.org](http://choosealicense.com).
 
 <div class="block-margin">
-   <img src="/img/posts/01-12-2015/sequence-bundles-in-alvis-tool.png">
+   <img src="/img/posts/01-12-2015/sequence-bundles-in-alvis-tool.png" class="shadow">
 </div>
 
 ### Licencje dla twórców dzieł 3D
@@ -61,6 +61,6 @@ Ci, którzy chcą udostępnić dzieła pisane, mają bardzo szeroki wybór licen
 Zestawienie najbardziej popularnych licencji otwartych. W tabeli zaznaczone najogólniejsze postanowienia najnowszych wersji poszczególnych licencji. W niektórych przypadkach mogą istnieć odstępstwa od reguły, braki w jednoznaczności zapisów, rozbieżności pomiędzy różnymi generacjami licencji, a czasami nawet drobne sprzeczności. Przed podjęciem decyzji o wyborze licencji, należy zapoznać się z jej pełną treścią a w razie potrzeby zasięgnąć porady specjalisty lub prawnika.
 
 <div class="block-margin">
-   <img src="/img/posts/01-12-2015/open-licences-table.png">
+   <img src="/img/posts/01-12-2015/open-licences-table.png" class="shadow">
 </div>
 

@@ -15,7 +15,7 @@ For issue #55 of the 2+3D Polish design quarterly, I wrote an article about synt
 <!--more-->
 
 <div class="block-margin">
-   <img src="/img/posts/01-06-2015/2plus3d-issue-55-genetic-biobricks.jpg">
+   <img src="/img/posts/01-06-2015/2plus3d-issue-55-genetic-biobricks-alpha2.png" class="shadow">
 </div>
 
 
@@ -39,7 +39,7 @@ Biologię syntetyczną cechuje głęboka inspiracja światem inżynierii mechani
 
 
 <div class="block-margin">
-   <img src="/img/posts/01-06-2015/gfp.jpg">
+   <img src="/img/posts/01-06-2015/gfp.jpg" class="shadow">
 </div>
 
 
@@ -64,7 +64,7 @@ Z kolei w [roku 2009](https://2009.igem.org/Team:ArtScienceBangalore/Project) Ar
 Dzięki standaryzacji biologia syntetyczna pozwala wejść na wyższy poziom projektowania GMO. Istotą BioBricks jest w końcu to, by biologowie syntetyczni musieli jak najmniej myśleć o biologii na poziomie molekularnym (co zrobić, by to działało) a w całości mogli poświęcić się biologii na poziomie ludzkim (w jaki sposób stworzyć użyteczny produkt GMO). Największą barierą na przeszkodzie do korzystania z technologii BioBricks jest więc nie specjalistyczna wiedza, lecz specjalistyczny sprzęt. Wyposażenie laboratoriów jest bardzo drogie, poza zasięgiem szkół, firm, instytucji oraz konsumentów indywidualnych.
 
 <div class="block-margin">
-   <img src="/img/posts/01-06-2015/bento-lab-1.jpg">
+   <img src="/img/posts/01-06-2015/bento-lab-1.jpg" class="shadow">
 </div>
 
 Z myślą o tym problemie powstał [bento•lab](www.bento.bio) — projekt laboratorium w pudełku, które dzięki niewysokiej cenie, mobilności oraz oprzyrządowaniu i oprogramowaniu open source znacząco zwiększa dostępność potrzebnych urządzeń. bento•lab zawiera trzy takie urządzenia. Nieduży, podświetlany zestaw do elektroforezy w żelu (moduł po lewej) pozwala wizualizować i rozróżniać molekuły DNA według ich rozmiaru. Kompaktowa centryfuga (w centrum) służy do separacji materiału organicznego poprzez wirowanie. Po lewej miniaturowa maszyna do reakcji łańcuchowej polimerazy (PCR, ang. Polimerase Chain Reaction) umożliwia kopiowanie wybranych sekwencji DNA w celu ich dalszego wykorzystania. Wszystko mieści się na kartce formatu A4.
@@ -74,7 +74,7 @@ W przestrzeni laboratorium bento•lab może służyć jako platforma do szybkie
 Zaczęliśmy w 2013 roku — jeszcze pod nazwą Darwin Toolbox — reprezentując UCL (University College London) w konkursie iGEM. Jednak bardzo szybko projekt zaczął żyć własnym życiem i wszedł w cykl prototypowania oraz badań użytkowych i materiałowych opartych na bliskiej współpracy pomiędzy dizajnerami a konstruktorami. Prace nad bento•lab trwają już drugi rok, stopniowo przybliżając nas wszystkich do przyszłości, w której biologia syntetyczna będzie technologią równie otwartą i dostępną, jak poczta elektroniczna dzisiaj.
 
 <div class="block-margin">
-   <img src="/img/posts/01-06-2015/bento-lab-2.jpg">
+   <img src="/img/posts/01-06-2015/bento-lab-2.jpg" class="shadow">
 </div>
 
 
