@@ -31,7 +31,9 @@ $large-leading: 1.66*$leading-unit;
 $huge-leading: 2.4*$leading-unit;
 
 // Declare other styles
-$underline: 1px solid $cyanA700;
+$line-thickness: 1.5px;
+$line-style: solid;
+$underline: $line-thickness $line-style $black;
 
 
 
@@ -293,7 +295,7 @@ sub {
 }
 
 .border {
-   border: 1px solid $dark-grey;
+   border: $line-thickness $line-style $dark-grey;
 }
 
 .image-gallery {
@@ -336,7 +338,7 @@ sub {
 // OTHER STYLES
 .divider {
    display: block;
-   border-bottom: 1px solid $light-grey;
+   border-bottom: $line-thickness $line-style $light-grey;
    margin-top: $huge-leading;
    margin-bottom: $small-leading*2;
 }
