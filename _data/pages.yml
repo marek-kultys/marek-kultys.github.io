@@ -5,6 +5,14 @@ home:
 case-study:
    headline: Case studies
    link: /case-studies
+   evinova:
+      heading: Solving the complexity crisis in clinical trials with Evinova
+      company: Evinova
+      year: 2024-2025
+   merlin:
+      heading: Consolidating fragmented enterprise tools with Merlin
+      company: AstraZeneca
+      year: 2023
    ee:
       heading: Scaling AI-driven drug discovery with Entity Explorer
       company: BenevolentAI
