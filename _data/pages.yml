@@ -38,10 +38,6 @@ case-study:
       company: Immunocore
       year: 2012
 
-work:
-   headline: Work that I'm proud of
-   link: /work
-
 blog:
    headline: Writing and speaking
    link: /blog
@@ -52,49 +48,3 @@ influences:
 
 contact:
    headline: Get in touch
-   link: /contact
-
-project-evinova:
-   headline: Evinova
-   exheadline: AstraZeneca
-   link: https://evinova.com/
-
-project-benevolent:
-   headline: BenevolentAI
-   link: https://www.youtube.com/watch?v=jBMJofhswOU
-
-project-biodesign:
-   headline: BioDesign Team
-   link: https://www.science-practice.com/teams/bio-design/
-
-project-sequence-bundles:
-   headline: Sequence Bundles
-   link: https://www.science-practice.com/projects/sequence-bundles/
-
-project-ctrl:
-   headline: Ctrl Group
-   link: https://www.ctrl-group.com/
-
-project-immunocore:
-   headline: Immunocore
-   link: https://www.immunocore.com/
-
-project-bento:
-   headline: The Bento Lab
-   link: https://www.bento.bio/
-
-project-data-explorers:
-   headline: Visual Design for Data Explorers
-   link: /work/data-explorers-workshop
-
-project-mitosis:
-   headline: Mitosis and Meiosis
-   link: /work/mitosis-and-meiosis
-
-project-lingua:
-   headline: Lingua Extraterrestris
-   link: /work/lingua-extraterrestris
-
-project-sex-shop:
-   headline: Sex Shop Logo
-   link: /work/sex-shop-logo
