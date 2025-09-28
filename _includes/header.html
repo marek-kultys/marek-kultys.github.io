@@ -4,13 +4,15 @@
          <a class="mutedlink" href="/">{{ site.data.mk.name }}</a>
          {% if page.label == "blog-post" %}
             <span class="backlink"> / <a href="/blog">Blog</a></span>
-         {% elsif page.label contains "study" %}
+         {% elsif page.label == "case-study" %}
             <span class="backlink"> / <a href="/case-studies">Cases</a></span>
          {% endif %}
       </h1>
    </div>
    <div class="container-two-thirds">
       {% if page.label == "blog-post" %}
+         <h2>{{ page.title }}</h2>
+      {% elsif page.label == "case-study" %}
          <h2>{{ page.title }}</h2>
       {% else %}
          <h2>
