@@ -32,7 +32,7 @@ case-study:
    sb: 
       heading: Surfacing hidden patterns in data with Sequence Bundles
       company: Science Practice
-      year: 2013–2014
+      year: 2013-2014
    immunocore: 
       heading: Communicating the brand and the science of Immunocore
       company: Immunocore
@@ -42,9 +42,10 @@ blog:
    headline: Writing and speaking
    link: /blog
 
-influences:
-   headline: My influences
-   link: /influences
+cases:
+   headline: Case studies
+   link: /case-studies
 
 contact:
    headline: Get in touch
+   link: /contact
