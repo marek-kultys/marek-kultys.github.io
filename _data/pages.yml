@@ -1,5 +1,5 @@
 home:
-   headline: I design tools that help people unlock the value of data and drive complex decision-making
+   headline: I help people drive complex decision-making by unlocking the value of their data 
    link: /
 
 case-study:
@@ -45,6 +45,10 @@ blog:
 cases:
    headline: Case studies
    link: /case-studies
+
+influences:
+   headline: My influences
+   link: /influences
 
 contact:
    headline: Get in touch
