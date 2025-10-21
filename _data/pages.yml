@@ -46,6 +46,10 @@ cases:
    headline: Case studies
    link: /case-studies
 
+influences:
+   headline: My influences
+   link: /influences
+
 contact:
    headline: Get in touch
    link: /contact
