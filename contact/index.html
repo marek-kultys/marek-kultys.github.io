@@ -7,15 +7,22 @@ label: contact
    <div class="container">
       <div class="container-two-thirds shift">
          <ol>
-            <li>Email: <a href="mailto:{{ site.data.mk.email }}@gmail.com">{{ site.data.mk.email }}@gmail.com</a></li>
-            <li>LinkedIn: <a href="https://linkedin.com/in/marek-kultys/">{{ site.data.mk.author }}</a></li>
-            <li>GitHub: <a href="https://github.com/marek-kultys">{{ site.data.mk.github }}</a></li>
+            <li>
+               Email: <a href="mailto:{{ site.data.mk.email }}@gmail.com" class="email-mailto">{{ site.data.mk.email }}@gmail.com</a>
+               <span class="email-copy" data-email="{{ site.data.mk.email }}@gmail.com">{{ site.data.mk.email }}@gmail.com</span>
+            </li>
+            <li>
+               LinkedIn: <a href="https://linkedin.com/in/marek-kultys/">{{ site.data.mk.author }}</a>
+            </li>
+            <li>
+               GitHub: <a href="https://github.com/marek-kultys">{{ site.data.mk.github }}</a>
+            </li>
          </ol>
       </div>
    </div>
    <div class="container">
       <div class="container-one-third shift contact-image">
-         <img src="/img/contact/mk.jpg">
+         <img src="/img/contact/mk.jpg" class="shadow">
       </div>
    </div>
 </section>

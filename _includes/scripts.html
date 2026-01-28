@@ -1,0 +1,17 @@
+<script>
+// Copy email address to clipboard
+document.addEventListener('DOMContentLoaded', function() {
+   var emailEl = document.querySelector('.email-copy');
+   if (!emailEl) return;
+
+   emailEl.addEventListener('click', function() {
+      var email = emailEl.getAttribute('data-email');
+      navigator.clipboard.writeText(email).then(function() {
+         emailEl.classList.add('copied');
+         setTimeout(function() {
+            emailEl.classList.remove('copied');
+         }, 2000);
+      });
+   });
+});
+</script>
