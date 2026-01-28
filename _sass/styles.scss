@@ -71,6 +71,10 @@ main {
    h4 {
       color: $dark-grey;
    }
+   a {
+      color: inherit;
+      border-bottom: none;
+   }
 }
 
 
