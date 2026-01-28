@@ -274,15 +274,7 @@ img {
    }
 }
 
-.banner-for-desktop {
-   display: none;
-   @include media($landscape){
-      display: block;
-      max-width: 100%;
-   }
-}
-
-.banner-for-mobile{
+.banner {
    display: block;
    width: 90vw;
    max-width: 90%;
@@ -291,7 +283,10 @@ img {
    margin-top: $nano-leading;
    margin-bottom: $large-leading;
    @include media($landscape){
-      display: none;
+      width: auto;
+      max-width: 100%;
+      margin-left: 0;
+      margin-bottom: 0;
    }
 }
 
