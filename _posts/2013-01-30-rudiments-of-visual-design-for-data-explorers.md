@@ -9,7 +9,7 @@ excerpt_separator: <!--more-->
 published: true
 ---
 
-After running my first [Visual Design for Data Explorers](/work/data-explorers-workshop) workshop, I was asked to publish a write-up in Parsons Journal for Information Mapping. I discuss selected elements and properties of the visual language that should be considered when designing data visualisations.
+After running my first workshop on visual design in data visualisation at the IEEEVis 2012 conference in Seattle, WA, I published the write-up in Parsons Journal for Information Mapping. I discuss selected elements and properties of the visual language to consider when designing data visualisations.
 
 <!--more-->
 

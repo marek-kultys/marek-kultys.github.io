@@ -9,7 +9,7 @@ excerpt_separator: <!--more-->
 published: true
 ---
 
-I was invited to speak at <a href="https://wudsilesia.pl/">WUD Silesia</a> 2019 about my design work at <a href="https://benevolent.ai/">BenevolentAI</a>. In this talk, I focus on designing complex products that use AI technologies and how it led me to revise some of my previously held beliefs about what good design means in this new technological context.
+I was invited to speak at <a href="https://wudsilesia.pl/" target="_blank">WUD Silesia</a> 2019 about my design work at <a href="https://benevolent.ai/" target="_blank">BenevolentAI</a>. In this talk, I focus on designing complex products that use AI technologies and how it led me to revise some of my previously held beliefs about what good design means in this new technological context.
 
 <div class="block-margin media-wrapper">
    <div class="video-wrapper">

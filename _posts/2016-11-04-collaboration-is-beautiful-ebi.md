@@ -8,7 +8,7 @@ excerpt_separator: <!--more-->
 published: true
 ---
 
-In this [interview](https://www.embl.org/news/science/1611-collaboration-is-beautiful/), I reflect with my co-authors of Sequence Bundles, James King, Nick Goldman, and Roland Schwarz, on how our collaboration started and what made it successful. 
+In this <a href="https://www.embl.org/news/science/1611-collaboration-is-beautiful/" target="_blank">interview</a>, I reflect with my co-authors of Sequence Bundles, James King, Nick Goldman, and Roland Schwarz, on how our collaboration started and what made it successful. 
 
 
 <!--more-->
