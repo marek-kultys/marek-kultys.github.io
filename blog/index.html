@@ -16,7 +16,7 @@ permalink: /blog/
 					</h4>
 					{{ post.excerpt }}
 					{% if post.image %}
-						<a href="{{ post.link }}" class="image-link"><img src="{{ post.image }}" class="shadow"></a>
+						<a href="{{ post.link }}" class="image-link"><img src="{{ post.image }}" class="shadow" alt="{{ post.title }}"></a>
 					{% endif %}
 				</div>
 			{% endfor %}
