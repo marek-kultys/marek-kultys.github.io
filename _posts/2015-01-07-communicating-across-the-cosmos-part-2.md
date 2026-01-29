@@ -9,7 +9,7 @@ excerpt_separator: <!--more-->
 published: true
 ---
 
-In this second instalment in my series about communication with extraterrestrial intelligence, I summarise the discussion that I participated in at the [Communicating Across the Cosmos](https://communicating.seti.org/) workshop organised by the SETI Institute in 2014.
+In this second instalment in my series about communication with extraterrestrial intelligence, I summarise the discussion that I participated in at the <a href="https://communicating.seti.org/" target="_blank">Communicating Across the Cosmos</a> workshop organised by the SETI Institute in 2014.
 
 <!--more-->
 

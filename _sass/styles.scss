@@ -15,6 +15,7 @@ $miami: linear-gradient(to left, rgba(195,240,246,1), rgba(255,223,199,1));
 
 // Declare type size
 $font-unit: 1.2em;
+$nano-type: 0.66*$font-unit;
 $micro-type: 0.75*$font-unit;
 $small-type: 1*$font-unit;
 $semi-type: 1.1*$font-unit;
@@ -69,6 +70,10 @@ main {
    margin-bottom: $large-leading;
    h4 {
       color: $dark-grey;
+   }
+   a {
+      color: inherit;
+      border-bottom: none;
    }
 }
 
@@ -274,15 +279,51 @@ img {
    }
 }
 
-.banner-for-desktop {
-   display: none;
+.email-mailto {
    @include media($landscape){
-      display: block;
-      max-width: 100%;
+      display: none;
    }
 }
 
-.banner-for-mobile{
+.email-copy {
+   display: none;
+   @include media($landscape){
+      display: inline;
+      position: relative;
+      color: $black;
+      border-bottom: $underline;
+      padding-bottom: $line-thickness;
+      cursor: pointer;
+      &::after {
+         content: 'Click to copy';
+         position: absolute;
+         top: -20%;
+         right: 102%;
+         margin-bottom: $nano-leading;
+         border-radius: $line-thickness;
+         font-size: $nano-type;
+         background: $cyanA700;
+         color: $white;
+         padding: 0 $nano-leading*2;
+         white-space: nowrap;
+         opacity: 0;
+         transition: opacity 0.2s ease;
+         pointer-events: none;
+      }
+      &:hover::after {
+         opacity: 1;
+      }
+      &:hover {
+         color: $cyanA700;
+         border-color: $cyanA700;
+      }
+      &.copied::after {
+         content: 'Copied';
+      }
+   }
+}
+
+.banner {
    display: block;
    width: 90vw;
    max-width: 90%;
@@ -291,7 +332,10 @@ img {
    margin-top: $nano-leading;
    margin-bottom: $large-leading;
    @include media($landscape){
-      display: none;
+      width: auto;
+      max-width: 100%;
+      margin-left: 0;
+      margin-bottom: 0;
    }
 }
 

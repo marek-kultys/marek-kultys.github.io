@@ -9,7 +9,7 @@ excerpt_separator: <!--more-->
 published: true
 ---
 
-I was the lead author on this peer-reviewed article introducing [Sequence Bundles](https://www.science-practice.com/projects/sequence-bundles/), our new sequence alignment data visualisation method. Since then, the paper received multiple citations and led to <a href="https://doi.org/10.1093/nar/gkw022">another publication I co-authored</a> in the high-impact Nucleic Acids Research journal.
+I was the lead author on this peer-reviewed article introducing <a href="https://www.science-practice.com/projects/sequence-bundles/" target="_blank">Sequence Bundles</a>, our new sequence alignment data visualisation method. Since then, the paper received multiple citations and led to <a href="https://doi.org/10.1093/nar/gkw022" target="_blank">another publication I co-authored</a> in the high-impact Nucleic Acids Research journal.
 
 <!--more-->
 

@@ -9,7 +9,7 @@ excerpt_separator: <!--more-->
 published: true
 ---
 
-At [Science Practice](https://www.science-practice.com/), I worked with [Simon Hazelwood-Smith](https://www.linkedin.com/in/simon-hazelwood-smith/) to explore the possibility of using [MinION](https://nanoporetech.com/products/minion) genetic sequencer to measure the microbiological biodiversity of soil without our own lab. We tested the usability of hardware and software for sequencing, and found insights into how agriculture could use new technology to monitor soil health.
+At <a href="https://www.science-practice.com/" target="_blank">Science Practice</a>, I worked with Simon Hazelwood-Smith to explore the possibility of using the MinION genetic sequencer to measure the microbiological biodiversity of soil without our own lab. We tested the usability of the sequencing hardware and software, and made insights into how agriculture could use new technology to monitor soil health.
 
 <!--more-->
 
