@@ -1,11 +1,11 @@
 <div class="container">
    <div class="container-one-third">
       <h1>
-         <a class="mutedlink" href="/">{{ site.data.mk.name }}</a>
+         <a class="mutedlink tooltip" href="/" data-tooltip="Go to home">{{ site.data.mk.name }}</a>
          {% if page.label == "blog-post" %}
-            <span class="backlink"> / <a href="/blog">Blog</a></span>
+            <span class="backlink"> / <a href="/blog" class="tooltip" data-tooltip="Back to Blog">Blog</a></span>
          {% elsif page.label == "case-study" %}
-            <span class="backlink"> / <a href="/case-studies">Cases</a></span>
+            <span class="backlink"> / <a href="/case-studies" class="tooltip" data-tooltip="Back to Cases">Cases</a></span>
          {% endif %}
       </h1>
    </div>

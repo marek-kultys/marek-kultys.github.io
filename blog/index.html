@@ -9,14 +9,14 @@ permalink: /blog/
 		<div class="container-two-thirds shift">
 			{% for post in site.posts %}
 				<div class="entry">
-					<h3><a href="{% if post.link %} {{ post.link }} {% else %} {{ post.url }} {% endif %}">{{ post.title }}</a></h3>
+					<h3><a href="{% if post.link %} {{ post.link }} {% else %} {{ post.url }} {% endif %}" class="tooltip" data-tooltip="Read post">{{ post.title }}</a></h3>
 					<h4>
 						<!-- Article {{ forloop.rindex }} &nbsp; &bull; &nbsp;  -->
 						{% include byline.html post=post %}
 					</h4>
 					{{ post.excerpt }}
 					{% if post.image %}
-						<a href="{{ post.link }}" class="image-link"><img src="{{ post.image }}" class="shadow" alt="{{ post.title }}"></a>
+						<a href="{{ post.link }}" class="image-link tooltip" data-tooltip="Read post"><img src="{{ post.image }}" class="shadow" alt="{{ post.title }}"></a>
 					{% endif %}
 				</div>
 			{% endfor %}
