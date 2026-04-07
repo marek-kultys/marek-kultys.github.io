@@ -2,10 +2,10 @@
    <div class="container">
       <div class="container-two-thirds shift">
          <ol>
-            <li {% if page.label contains 'case' %} class="strong" {% endif %}><a href="{{ site.data.pages.case-study.link }}">{{ site.data.pages.case-study.headline }}</a></li>
-            <li {% if page.label contains 'blog' %} class="strong" {% endif %}><a href="{{ site.data.pages.blog.link }}">{{ site.data.pages.blog.headline }}</a></li>
-            <li {% if page.label == 'influences' %} class="strong" {% endif %}><a href="{{ site.data.pages.influences.link }}">{{ site.data.pages.influences.headline }}</a></li>
-            <li {% if page.label == 'contact' %} class="strong" {% endif %}><a href="{{ site.data.pages.contact.link }}">{{ site.data.pages.contact.headline }}</a></li>
+            <li {% if page.label contains 'case' %} class="strong" {% endif %}><a href="{{ site.data.pages.case-study.link }}" class="tooltip" data-tooltip="View case studies">{{ site.data.pages.case-study.headline }}</a></li>
+            <li {% if page.label contains 'blog' %} class="strong" {% endif %}><a href="{{ site.data.pages.blog.link }}" class="tooltip" data-tooltip="View blog posts">{{ site.data.pages.blog.headline }}</a></li>
+            <li {% if page.label == 'influences' %} class="strong" {% endif %}><a href="{{ site.data.pages.influences.link }}" class="tooltip" data-tooltip="View my influences">{{ site.data.pages.influences.headline }}</a></li>
+            <li {% if page.label == 'contact' %} class="strong" {% endif %}><a href="{{ site.data.pages.contact.link }}" class="tooltip" data-tooltip="Get in touch">{{ site.data.pages.contact.headline }}</a></li>
          </ol>
       </div>
    </div>

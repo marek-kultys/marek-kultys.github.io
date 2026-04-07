@@ -21,6 +21,8 @@ $small-type: 1*$font-unit;
 $semi-type: 1.1*$font-unit;
 $medium-type: 1.25*$font-unit;
 $large-type: 1.7*$font-unit;
+$tooltip-type: 18px;
+
 
 // Declare leading
 $leading-unit: 1em;
@@ -33,6 +35,7 @@ $huge-leading: 2.4*$leading-unit;
 
 // Declare other styles
 $line-thickness: 1px;
+$border-radius: 4px;
 $line-style: solid;
 $underline: $line-thickness $line-style $black;
 
@@ -300,7 +303,7 @@ img {
          top: -20%;
          right: 102%;
          margin-bottom: $nano-leading;
-         border-radius: $line-thickness;
+         border-radius: $border-radius;
          font-size: $nano-type;
          background: $cyanA700;
          color: $white;
@@ -322,6 +325,34 @@ img {
       }
    }
 }
+
+// .tooltip {
+//    @include media($landscape){
+//       position: relative;
+//       &::after {
+//          content: attr(data-tooltip);
+//          position: absolute;
+//          top: 50%;
+//          left: 105%;
+//          transform: translateY(-45%);
+//          border-radius: $border-radius;
+//          font-size: $tooltip-type;
+//          font-weight: normal;
+//          font-style: normal;
+//          line-height: 1.33;
+//          background: $white;
+//          color: $cyanA700;
+//          padding: 1px 6px 3px 6px;
+//          white-space: nowrap;
+//          opacity: 0;
+//          transition: opacity 0.2s ease;
+//          pointer-events: none;
+//       }
+//       &:hover::after {
+//          opacity: 1;
+//       }
+//    }
+// }
 
 .banner {
    display: block;
