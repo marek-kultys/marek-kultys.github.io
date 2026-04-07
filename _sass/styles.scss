@@ -33,6 +33,7 @@ $huge-leading: 2.4*$leading-unit;
 
 // Declare other styles
 $line-thickness: 1px;
+$border-radius: 4px;
 $line-style: solid;
 $underline: $line-thickness $line-style $black;
 
@@ -301,6 +302,7 @@ img {
          right: 102%;
          margin-bottom: $nano-leading;
          border-radius: $line-thickness;
+         border-radius: $border-radius;
          font-size: $nano-type;
          background: $cyanA700;
          color: $white;
