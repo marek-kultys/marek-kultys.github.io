@@ -326,33 +326,33 @@ img {
    }
 }
 
-.tooltip {
-   @include media($landscape){
-      position: relative;
-      &::after {
-         content: attr(data-tooltip);
-         position: absolute;
-         top: 50%;
-         left: 105%;
-         transform: translateY(-45%);
-         border-radius: $border-radius;
-         font-size: $tooltip-type;
-         font-weight: normal;
-         font-style: normal;
-         line-height: 1.33;
-         background: $white;
-         color: $cyanA700;
-         padding: 1px 6px 3px 6px;
-         white-space: nowrap;
-         opacity: 0;
-         transition: opacity 0.2s ease;
-         pointer-events: none;
-      }
-      &:hover::after {
-         opacity: 1;
-      }
-   }
-}
+// .tooltip {
+//    @include media($landscape){
+//       position: relative;
+//       &::after {
+//          content: attr(data-tooltip);
+//          position: absolute;
+//          top: 50%;
+//          left: 105%;
+//          transform: translateY(-45%);
+//          border-radius: $border-radius;
+//          font-size: $tooltip-type;
+//          font-weight: normal;
+//          font-style: normal;
+//          line-height: 1.33;
+//          background: $white;
+//          color: $cyanA700;
+//          padding: 1px 6px 3px 6px;
+//          white-space: nowrap;
+//          opacity: 0;
+//          transition: opacity 0.2s ease;
+//          pointer-events: none;
+//       }
+//       &:hover::after {
+//          opacity: 1;
+//       }
+//    }
+// }
 
 .banner {
    display: block;
