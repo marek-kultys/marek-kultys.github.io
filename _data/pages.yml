@@ -46,9 +46,9 @@ cases:
    headline: Case studies
    link: /case-studies
 
-apps:
-   headline: My apps
-   link: https://apps.marek-kultys.com/
+#apps:
+#   headline: My apps
+#   link: https://apps.marek-kultys.com/
 
 influences:
    headline: My influences
