@@ -1,0 +1,39 @@
+---
+sitemap: false
+---
+{%- comment -%}
+Hand-written sitemap. Deliberately NOT the jekyll-sitemap plugin, by decision.
+
+The host comes from _data/mk.yml so there is ONE source of truth for it. Do not
+hardcode a domain here: mk.yml currently says http, the live site enforces
+https, and the day mk.yml is corrected this file must follow it automatically.
+
+The extension test is load-bearing, and the way it is written is deliberate.
+site.pages carries every file with front matter, which here includes
+css/styles.css and the theme's assets/css/style.css — both were listed as
+crawlable pages before this filter existed. The obvious test, page.output_ext,
+does NOT work: Jekyll 3 exposes only content/dir/name/path/url to Liquid, so
+page.output_ext is always nil and the filter silently drops EVERY page, leaving
+a sitemap of posts only. Hence splitting page.name. Do not "simplify" it back.
+
+Pages opt out with `sitemap: false` in their front matter. Unpublished posts
+never reach site.posts, so drafts are excluded for free.
+{%- endcomment -%}
+{%- assign base = site.data.mk.url -%}
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- for page in site.pages %}
+{%- assign ext = page.name | split: '.' | last %}
+{%- unless page.sitemap == false or ext != 'html' or page.url == '/404.html' %}
+  <url>
+    <loc>{{ base }}{{ page.url }}</loc>
+  </url>
+{%- endunless -%}
+{%- endfor -%}
+{%- for post in site.posts %}
+  <url>
+    <loc>{{ base }}{{ post.url }}</loc>
+    <lastmod>{{ post.date | date: "%Y-%m-%d" }}</lastmod>
+  </url>
+{%- endfor %}
+</urlset>
