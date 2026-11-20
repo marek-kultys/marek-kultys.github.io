@@ -1,6 +1,7 @@
 ---
 layout: blog-post
 label: blog-post
+lang: pl
 title: Genetic Biobricks (Genetyczne klocki)
 date: June 2015
 image: /img/posts/01-06-2015/2plus3d-issue-55-genetic-biobricks-alpha2.png
