@@ -1,4 +1,4 @@
-exclude: [README.md]
+exclude: [README.md, CLAUDE.md]
 host: 0.0.0.0
 url: "http://marek-kultys.github.io"
 
