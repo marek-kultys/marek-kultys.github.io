@@ -21,7 +21,7 @@ label: influences
             <p>Isotype's visual style, ingenious charts, and clever narratives have always been an inspiration for me in my work with data. But only after reading <a href="https://hyphenpress.co.uk/products/books/978-0-907259-40-4" target="_blank" rel="noopener noreferrer" class="tooltip" data-tooltip="View The Transformer book">The Transformer</a>, I also appreciated the value of the process that Otto and Marie Neurath established to distill something complex into something playful.</p>
          </div>
       </div>
-      <div class="container-two-thirds shift" id="fix-reduced-margin">
+      <div class="container-two-thirds shift fix-reduced-margin">
          <div class="block-margin">
             <img src="/img/influences/isotype.jpg" class="shadow" alt="Only An Ocean Between by L. Secor Florence with 18 charts designed by the Isotype Institute">
          </div>
@@ -47,7 +47,7 @@ label: influences
             <p>In his groundbreaking <a href="https://post.moma.org/wladyslaw-strzeminskis-theory-of-vision/" target="_blank" rel="noopener noreferrer" class="tooltip" data-tooltip="Read MoMA article">Theory of Vision</a>, Władysław Strzemiński described the evolution of human vision not only as a sensory apparatus, but also as one of our cognitive faculties. Strzemiński's expanded definition of what it means to 'see' and to 'reason' using visual stimuli remains a revelation for me.</p>
          </div>
       </div>
-      <div class="container-two-thirds shift" id="fix-reduced-margin">
+      <div class="container-two-thirds shift fix-reduced-margin">
          <div class="block-margin">
             <img src="/img/influences/teoria-widzenia.jpg" class="shadow" alt="Bison with arrowheads — cave painting from Niaux, France, paleolithic period. Re-drawn by W. Strzemiński">
          </div>
@@ -86,7 +86,11 @@ label: influences
             </h4>
          </div>
       </div>
+      <!-- Empty by design, and it must stay closed rather than removed. Neat emits
+           .container-two-thirds:last-child { margin-right: 0 }, so deleting this
+           column would promote the caption block above it to :last-child and
+           silently change that block's right margin. -->
       <div class="container-two-thirds shift">
-
+      </div>
    </div>
 </section>
