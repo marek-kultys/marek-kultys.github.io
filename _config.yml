@@ -28,12 +28,18 @@ timezone: Europe/London
 # FREE TO CHANGE
 github: [metadata]
 encoding: UTF-8
+# ONE kramdown block only. YAML keeps the LAST duplicate key, so the second
+# kramdown: block that used to sit further down silently discarded input: GFM
+# and hard_wrap: false, and gfm_quirks sat at the top level where kramdown
+# never saw it. Everything kramdown needs belongs in this single block.
 kramdown:
   input: GFM
   hard_wrap: false
+  gfm_quirks: paragraph_end
+  math_engine: mathjax
+  syntax_highlighter: rouge
 future: true
 jailed: false
-gfm_quirks: paragraph_end
 
 
 # CANNOT CHANGE
@@ -44,7 +50,5 @@ incremental: false
 highlighter: rouge
 gist:
   noscript: false
-kramdown:
-  math_engine: mathjax
-  syntax_highlighter: rouge
+# kramdown settings are merged into the single block above.
 
