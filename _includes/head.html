@@ -2,9 +2,15 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="title" content="{{ site.data.mk.name }}">
-<meta name="description" content="{{ site.data.mk.description }} ">
+<meta name="title" content="{{ page_title }}">
+<meta name="description" content="{{ page_description }}">
 <meta name="author" content="{{ site.data.mk.name }}">
+
+{%- comment -%}
+Canonical. Without it /blog/ and /blog/index.html look like two pages holding the
+same content. The host comes from _data/mk.yml, the one place it is written down.
+{%- endcomment -%}
+<link rel="canonical" href="{{ site.data.mk.url }}{{ page.url }}">
 
 {% include favicon.html %}
 

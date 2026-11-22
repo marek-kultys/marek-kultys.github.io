@@ -1,9 +1,31 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: 'en' }}">
 	<head>
-    	<title>
-      	{{ site.data.mk.name }}
-      	</title>
+    	{%- comment -%}
+    	The page's title and description are computed HERE, once, and the includes below read
+    	the two variables. Liquid includes share this scope, so <title>, <meta name="title">
+    	and og:title cannot drift apart the way three separate expressions would.
+
+    	page.title is set in the front matter of every page and every post, and always has
+    	been. This layout used to ignore it and print site.data.mk.name, so all 31 pages
+    	shipped the title "Marek Kultys" and nothing else.
+
+    	The "Marek Kultys | " prefix is added here and must NOT also live in front matter, or
+    	it prints twice. Note that _includes/header.html prints page.title as the visible <h2>
+    	on posts and case studies, so a page's title is page copy as well as metadata: adding
+    	the prefix in front matter would also put it on the page itself.
+
+    	Never send these through the `escape` filter. Two post titles contain a hand-written
+    	&#58; entity and escaping would render a literal "&#58;" in the browser tab. No title
+    	in the repo contains a double quote, so they are safe in an attribute unescaped.
+    	{%- endcomment -%}
+    	{%- if page.title and page.label != "home" -%}
+    		{%- assign page_title = site.data.mk.name | append: " | " | append: page.title -%}
+    	{%- else -%}
+    		{%- assign page_title = site.data.mk.title -%}
+    	{%- endif -%}
+    	{%- assign page_description = page.description | default: site.data.mk.description -%}
+    	<title>{{ page_title }}</title>
     	{% include head.html %}
 		{% include scripts.html %}
 		{% include mixpanel.html %}

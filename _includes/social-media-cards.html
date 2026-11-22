@@ -1,5 +1,21 @@
-<meta prefix="og: http://ogp.me/ns#" property="og:title" content="{{ site.data.mk.name }}" />
-<meta prefix="og: http://ogp.me/ns#" property="og:description" content="{{ site.data.mk.description }}" />
-<meta prefix="og: http://ogp.me/ns#" property="og:image" content="{{ site.data.mk.url }}/img/favicon/voyager-alpha3-thumbnail.png" />
-<meta prefix="og: http://ogp.me/ns#" property="og:url" content="{{ site.data.mk.url }}" />
-<meta name="image" property="og:image" content="/img/favicon/voyager-alpha3-thumbnail.png">
+{%- comment -%}
+page_title and page_description are computed in _layouts/main.html, so the card and
+the browser tab can never disagree.
+
+og:url was site.data.mk.url on every page, i.e. every shared link previewed as the
+homepage. It is now the page's own address.
+
+og:image uses the post's own image where it has one. `default` is load-bearing: one
+post carries an empty `image:` key, and Liquid treats an empty string as TRUTHY, so
+an `if page.image` test would emit the site URL with nothing after it. `default`
+catches nil and empty alike. (Liquid tags are NOT inert inside an HTML comment, which
+is why that test is spelled out in prose here rather than written as a tag.)
+
+A relative og:image is invalid — scrapers do not resolve it against the page — so the
+host is prepended here. A second, relative og:image tag used to sit below this block
+and has been removed; two og:image tags let a scraper pick the wrong one.
+{%- endcomment -%}
+<meta property="og:title" content="{{ page_title }}" />
+<meta property="og:description" content="{{ page_description }}" />
+<meta property="og:image" content="{{ site.data.mk.url }}{{ page.image | default: '/img/favicon/voyager-alpha3-thumbnail.png' }}" />
+<meta property="og:url" content="{{ site.data.mk.url }}{{ page.url }}" />
