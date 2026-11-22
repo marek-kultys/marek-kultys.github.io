@@ -22,6 +22,10 @@ $semi-type: 1.1*$font-unit;
 $medium-type: 1.25*$font-unit;
 $large-type: 1.7*$font-unit;
 $tooltip-type: 18px;
+// Inline code sits INSIDE text that is already sized in em, so its size has to
+// be a ratio of its parent rather than a multiple of $font-unit like the scale
+// above. Building it from $font-unit would compound and render code oversized.
+$code-type: 0.85em;
 
 
 // Declare leading
@@ -38,6 +42,9 @@ $line-thickness: 1px;
 $border-radius: 4px;
 $line-style: solid;
 $underline: $line-thickness $line-style $black;
+// No monospace webfont is loaded on purpose: a system stack costs no request
+// and renders instantly. Barlow has no monospace cut.
+$mono-font: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
 
 
 
@@ -198,6 +205,81 @@ sub {
 .appendix {
    p, h3, ul {
       font-size: $semi-type;
+   }
+}
+
+// CODE
+// Jekyll + Rouge wrap a fenced ``` block as:
+//    div.highlighter-rouge > div.highlight > pre.highlight > code > span.<token>
+// A ~~~ fence or an indented block produces a bare pre > code with no wrappers and
+// no spans, so both shapes are styled here. Token colours come from the site
+// palette rather than an imported Rouge theme, which would fight the Miami
+// gradient. overflow-x on pre is load-bearing: without it a single long line of
+// code widens the whole page on mobile instead of scrolling inside its own box.
+
+code { // inline code, e.g. `permalink`
+   font-family: $mono-font;
+   font-size: $code-type;
+   background: $cyan50;
+   border-radius: $border-radius;
+   padding: 0 $nano-leading;
+   // Load-bearing. A long unbroken token (a path, a flag, a URL) does not wrap at
+   // slashes or colons, so without this it runs past the right edge of the page.
+   // html{overflow-x:hidden} then CLIPS it rather than scrolling, silently eating
+   // the end of the string on narrow screens. Measured at 375px: 402px wide page.
+   overflow-wrap: break-word;
+}
+
+pre { // code block
+   font-family: $mono-font;
+   font-size: $small-type;
+   line-height: $medium-leading;
+   color: $black;
+   background: $cyan50;
+   border: $line-thickness $line-style $light-grey;
+   border-radius: $border-radius;
+   padding: $small-leading;
+   margin: 0 0 $medium-leading 0;
+   max-width: 100%;
+   overflow-x: auto;
+   code { // undo the inline treatment for code inside a block
+      font-size: inherit;
+      background: none;
+      border-radius: 0;
+      padding: 0;
+      overflow-wrap: normal; // a block scrolls sideways; it must not re-wrap
+   }
+}
+
+div.highlighter-rouge { // Rouge's outer wrapper owns the block spacing.
+   // The div. prefix matters: kramdown puts .highlighter-rouge on INLINE <code>
+   // elements as well, and a bare .highlighter-rouge rule would target those too.
+   margin-bottom: $medium-leading;
+   .highlight, pre {
+      margin-bottom: 0;
+   }
+}
+
+.highlight { // Rouge token colours, restrained on purpose
+   .c, .c1, .cm, .cs, .cd { // comments
+      color: $dark-grey;
+      font-style: italic;
+   }
+   .k, .kc, .kd, .kn, .kp, .kr, .kt { // keywords
+      font-weight: 600;
+   }
+   .s, .s1, .s2, .sb, .sc, .sd, .se, .sh, .si, .sx, .sr, .ss { // strings
+      color: $cyanA700;
+   }
+   .m, .mi, .mf, .mh, .mo, .mb { // numbers
+      color: $cyanA700;
+   }
+   .nb, .nc, .nf, .nn { // builtins, classes, functions, namespaces
+      font-weight: 600;
+   }
+   .err {
+      color: $white;
+      background: $cyanA700;
    }
 }
 
