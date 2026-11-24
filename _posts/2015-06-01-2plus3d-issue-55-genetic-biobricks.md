@@ -3,6 +3,7 @@ layout: blog-post
 label: blog-post
 lang: pl
 title: Genetic Biobricks (Genetyczne klocki)
+description: "My article for issue #55 of the Polish design quarterly 2+3D, on synthetic biology and the roles designers are finding in it. Full text in Polish."
 date: June 2015
 image: /img/posts/01-06-2015/2plus3d-issue-55-genetic-biobricks-alpha2.png
 published: true

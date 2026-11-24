@@ -2,6 +2,7 @@
 layout: blog-post
 label: blog-post
 title: Are We Sending Aliens the Right Messages?
+description: "My BBC Future interview with Tracy Logan on the complexities of communicating with extraterrestrial intelligence."
 date: November 2014
 link: https://www.bbc.co.uk/future/article/20141112-will-et-understand-our-messages
 excerpt_separator: <!--more-->

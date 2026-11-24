@@ -2,6 +2,7 @@
 layout: blog-post
 label: blog-post
 title: Looking for a Warm Fuzzy Feeling&#58; Challenges of Designing an AI Platform for Drug Discovery
+description: "My WUD Silesia 2019 talk on designing complex AI products at BenevolentAI, and the beliefs about good design it made me revise."
 date: November 2019
 link: https://www.benevolent.com/news/challenges-of-designing-an-ai-platform-for-drug-discovery-w-marek-kultys
 image:

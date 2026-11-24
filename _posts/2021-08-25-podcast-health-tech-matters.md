@@ -2,6 +2,7 @@
 layout: blog-post
 label: blog-post
 title: Speaking on the Health Tech Matters Podcast
+description: "On the Health Tech Matters podcast: co-designing for expert users, building UX teams in deep tech, and designing an AI platform for drug discovery."
 date: August 2021
 link: https://anchor.fm/health-tech-matters/episodes/BenevolentAI--Marek-Kultys-On-Design-for-AI-Drug-Discovery-Platform-e161sel
 excerpt_separator: <!--more-->

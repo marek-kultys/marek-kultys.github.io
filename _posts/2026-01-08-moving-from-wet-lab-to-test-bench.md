@@ -2,6 +2,7 @@
 layout: blog-post
 label: blog-post
 title: Moving from the wet lab to the test bench
+description: "After 15 years in the life sciences I moved into automotive engineering. The design principles I bring with me from drug discovery, trials and genomics."
 date: January 2026
 link: /blog/2026/01/01/moving-from-wet-lab-to-test-bench/
 image: /img/posts/08-01-2026/wet-lab-to-test-bench.jpg

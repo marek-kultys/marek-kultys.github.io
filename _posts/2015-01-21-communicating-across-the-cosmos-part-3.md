@@ -2,6 +2,7 @@
 layout: blog-post
 label: blog-post
 title: Communicating Across the Cosmos, Part 3
+description: "Part three of my series on communicating with extraterrestrial intelligence, covering the master's thesis I presented at the SETI Institute workshop."
 date: January 2015
 link: https://www.science-practice.com/blog/2015/01/21/communicating-across-the-cosmos-3/
 image: /img/posts/21-01-2015/a-cultural-codes-alpha3.png

@@ -2,6 +2,7 @@
 layout: blog-post
 label: blog-post
 title: I used GenAI to accelerate time to insight by 220% — but I'm not delegating everything yet
+description: "I cut a design concept test from over 17 hours to 7.5 using GenAI. Where it helped, and what I am still not handing off to AI."
 date: June 2025
 link: /blog/2025/06/01/using-GenAI-to-accelerate-time-to-insight/
 image: /img/posts/01-06-2025/genai-table.jpg

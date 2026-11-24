@@ -3,6 +3,7 @@ layout: blog-post
 label: blog-post
 lang: pl
 title: Some Rights Reserved (Pewne prawa zastrzeżone)
+description: "My practical guide, for issue #57 of the Polish design quarterly 2+3D, to the open licences available to designers who want to share their work. In Polish."
 date: December 2015
 image: /img/posts/01-12-2015/2plus3d-issue-57-some-rights-reserved-alpha2.png
 published: true

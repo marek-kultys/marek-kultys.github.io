@@ -2,6 +2,7 @@
 layout: blog-post
 label: blog-post
 title: I'm not an engineer and I'm building an app for swimmers
+description: "I am a product designer, not an engineer, and I am building an Apple Watch app for swimmers with AI as my engineering collaborator."
 
 date: August 2026
 link: /blog/2026/08/01/i-am-not-an-engineer-and-i-am-building-an-app/

@@ -2,6 +2,7 @@
 layout: blog-post
 label: blog-post
 title: Principles of Designing Information Experiences
+description: "Design principles from the BioDesign team at Science Practice, written up with Simon Hazelwood-Smith from a talk we gave in 2018."
 date: June 2018
 link: https://www.science-practice.com/blog/2018/06/11/uxls-boston/
 image: /img/posts/11-06-2018/exploration.gif

@@ -2,6 +2,7 @@
 layout: blog-post
 label: blog-post
 title: Four Things I Learnt Hiring My First UX Team
+description: "What I learnt hiring my first UX team in 2020 at BenevolentAI, written for other first-time hiring managers."
 date: March 2021
 link: https://marekkultys.medium.com/4-things-i-learnt-when-hiring-my-first-ux-team-ebfc7bf39cc
 image: /img/posts/21-03-2021/hiring-alpha3.png
