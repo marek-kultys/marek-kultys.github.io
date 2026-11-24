@@ -21,7 +21,8 @@ $small-type: 1*$font-unit;
 $semi-type: 1.1*$font-unit;
 $medium-type: 1.25*$font-unit;
 $large-type: 1.7*$font-unit;
-$tooltip-type: 18px;
+$tooltip-type: 18px;   // Used ONLY by the disabled .tooltip block further down.
+                       // Unused on purpose; do not delete it as dead code.
 // Inline code sits INSIDE text that is already sized in em, so its size has to
 // be a ratio of its parent rather than a multiple of $font-unit like the scale
 // above. Building it from $font-unit would compound and render code oversized.
@@ -408,6 +409,36 @@ img {
    }
 }
 
+// DISABLED ON PURPOSE, AND KEPT ON PURPOSE. Do not delete this block, and do not
+// delete the 65 `class="tooltip" data-tooltip="..."` pairs in the markup that go with
+// it (336 instances once the header, footer and nav includes are rendered across every
+// page). Marek wrote those strings deliberately — "Open Tufts research PDF", "View IMCR
+// on Nasdaq" — and judged the feature overkill rather than wrong. Keeping the markup
+// costs 161 gzipped bytes on the heaviest page, which is nothing; re-authoring 65
+// strings later would cost hours.
+//
+// IF YOU RE-ENABLE THIS, FIX THE CLIPPING FIRST. Measured by rebuilding the site and
+// injecting this exact CSS, with real Barlow metrics, on /case-studies/ (23 tooltips):
+//
+//     960px  15 of 23 clipped, worst overruns the viewport by 132px
+//    1024px  13 of 23 clipped, worst 122px
+//    1280px   9 of 23 clipped, worst  84px
+//    1440px   6 of 23 clipped, worst  60px
+//    1920px   none
+//
+// `left: 105%` pushes the tooltip right of its link and `white-space: nowrap` stops it
+// wrapping, so a link in the right-hand column overflows the page. html{overflow-x:hidden}
+// then CLIPS it instead of scrolling, so the text ends mid-word with nothing to indicate
+// it. Note it is WORST at 960px — the very width where @include media($landscape) turns
+// it on. A fix: flip the tooltip to the left for right-column links, or drop nowrap and
+// give it a max-width.
+//
+// THIS IS NOT AN ACCESSIBILITY FEATURE, whatever the name suggests. There is no :focus
+// rule, so a keyboard user never triggers it; the $landscape query excludes every touch
+// device; and data-tooltip is not ARIA, so it adds nothing to a link's accessible name.
+// It is an affordance for sighted mouse users on desktop. Adding :focus-visible beside
+// :hover is what would start making it true for keyboard users.
+//
 // .tooltip {
 //    @include media($landscape){
 //       position: relative;
