@@ -79,7 +79,7 @@ main {
    height: 10em;
    padding-top: 6em;
    margin-bottom: $large-leading;
-   h4 {
+   .t-meta {
       color: $dark-grey;
    }
    a {
@@ -104,7 +104,25 @@ a {
    }
 }
 
-p, h1, h2, h3, h4, h5, ol, ul, li {
+// TYPE ROLES
+// h1-h5 were being used as a TYPE SCALE rather than a document outline: of the site's
+// 221 <h4> elements, 219 were captions, footer credits, post bylines and "Case study"
+// eyebrow labels. That made every page announce a long list of fake headings to a screen
+// reader, gave each case study two <h1> elements, and produced an h2 -> h4 jump on 28
+// pages. The five .t-* classes below carry exactly the same declarations as h1-h5, so an
+// element can take the heading LEVEL its outline needs while keeping the SIZE the design
+// needs -- and something that was never a heading can stop being one without changing by
+// a single pixel.
+//
+// Converted non-headings become <div>, never <p>. Two reasons, both load-bearing:
+// p sets margin-bottom (headings here are margin: 0), and `p:last-of-type` below removes
+// the margin from the last <p> among its siblings -- so introducing one new <p> silently
+// moves that margin onto a different paragraph. A <div> has neither behaviour.
+//
+// The .t-* classes MUST stay in the font-family rule below. Nothing sets a font on
+// <body>, so a bare <div> would fall back to the browser's default serif.
+p, h1, h2, h3, h4, h5, ol, ul, li,
+.t-display, .t-headline, .t-section, .t-meta, .t-note {
    font-family: 'Barlow', sans-serif;
    color: $black;
    margin: 0px;
@@ -120,7 +138,7 @@ p { // body text
    }
 }
 
-h1 { // used for MK
+h1, .t-display { // site name / case-study heading
    font-weight: 600;
    font-size: $large-type;
    line-height: $medium-leading;
@@ -130,25 +148,25 @@ h1 { // used for MK
    }
 }
 
-h2 { // used for page title
+h2, .t-headline { // page headline
    font-weight: 400;
    font-size: $large-type;
    line-height: $medium-leading;
 }
 
-h3 { // used for subtitles
+h3, .t-section { // section headings
    font-weight: 600;
    font-size: $medium-type;
    line-height: $large-leading;
 }
 
-h4 { // used for post metadata
+h4, .t-meta { // captions, bylines, footer, eyebrows
    font-weight: 200;
    font-size: $small-type;
    line-height: $medium-leading;
 }
 
-h5 { // used for image annotations
+h5, .t-note { // image annotations
    font-weight: 200;
    font-size: $micro-type;
    line-height: $small-leading;
@@ -204,7 +222,7 @@ sub {
 }
 
 .appendix {
-   p, h3, ul {
+   p, h3, .t-section, ul {
       font-size: $semi-type;
    }
 }
@@ -541,7 +559,7 @@ img {
       margin-top: $huge-leading;
       margin-bottom: $large-leading;
    }
-   h4{
+   .t-meta {
       margin-top: $micro-leading;
       margin-bottom: $micro-leading;
    }

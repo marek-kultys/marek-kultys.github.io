@@ -6,7 +6,7 @@ label: case-study
 ---
 <section>
    <div class="container">
-      <h4>Case study</h4>
+      <div class="t-meta">Case study</div>
       <h1>{{ site.data.pages.case-study.sb.heading }}</h1>
    </div>
 
@@ -20,18 +20,18 @@ label: case-study
                   <img src="/img/cases/sb/sb-front8.png" title="Your browser does not support the video tag" alt="Sequence Bundles intro video">
                </video>
             </div>
-            <h5 class="secondary-annotation">Video narrated by James Godwin</h5>
+            <div class="secondary-annotation t-note">Video narrated by James Godwin</div>
          </div>
       </div>
 
       <div class="container-one-third shift-back">
          <div class="caption-margin">
-            <h4 class="caption"><b>My role:</b> Project & Design Lead</h4>
-            <h4 class="caption"><b>Project type:</b> In-house R&D + External collaboration</h4>
-            <h4 class="caption"><b>Company:</b> {{ site.data.pages.case-study.sb.company }}</h4>
-            <h4 class="caption"><b>My contributions:</b> Design leadership, Project management, Fundraising, Prototyping, Web development, Publishing</h4>
-            <h4 class="caption"><b>Outcome:</b> New data patterns exposed with an award-winning visualisation tool</h4>
-            <h4 class="caption"><b>Website:</b> <a href="https://www.science-practice.com/projects/sequence-bundles/" target="_blank" rel="noopener noreferrer" class="tooltip" data-tooltip="Visit Sequence Bundles site">Sequence Bundles</a></h4>
+            <div class="caption t-meta"><b>My role:</b> Project & Design Lead</div>
+            <div class="caption t-meta"><b>Project type:</b> In-house R&D + External collaboration</div>
+            <div class="caption t-meta"><b>Company:</b> {{ site.data.pages.case-study.sb.company }}</div>
+            <div class="caption t-meta"><b>My contributions:</b> Design leadership, Project management, Fundraising, Prototyping, Web development, Publishing</div>
+            <div class="caption t-meta"><b>Outcome:</b> New data patterns exposed with an award-winning visualisation tool</div>
+            <div class="caption t-meta"><b>Website:</b> <a href="https://www.science-practice.com/projects/sequence-bundles/" target="_blank" rel="noopener noreferrer" class="tooltip" data-tooltip="Visit Sequence Bundles site">Sequence Bundles</a></div>
          </div>
       </div>
    </div>
@@ -40,7 +40,7 @@ label: case-study
 
    <div class="container">
       <div class="container-two-thirds shift">
-         <h3>The Challenge</h3>
+         <h2 class="t-section">The Challenge</h2>
          <p>
             Bioinformatics is the cornerstone of modern life sciences. However, some of its early tools still struggle to provide answers to the problems investigated by modern researchers.
          </p>
@@ -56,12 +56,12 @@ label: case-study
       </div>
       <div class="container-one-third shift-back">
          <div class="caption-margin">
-            <h4 class="caption">
+            <div class="caption t-meta">
                pLogo summarises data about each position in a sequence but hides important information about the sequence itself.
-            </h4>
-            <h4 class="caption">
+            </div>
+            <div class="caption t-meta">
                Here, two different sequences result in the same pLogo. We need new tools to expose sequential patterns in data.
-            </h4>
+            </div>
          </div>
       </div>
 
@@ -70,7 +70,7 @@ label: case-study
             How might we visualise sequence data differently to expose relational patterns in data and help scientists better understand biology, debug datasets, and drive scientific discovery further?
          </p>
 
-         <h3>My Approach</h3>
+         <h2 class="t-section">My Approach</h2>
          <p>
             My user-centred approach focused on target audiences in academia and industry. It helped secure interest from bioinformatics practitioners. I invited users to co-design, I prototyped, tested, and took the concept to conferences.
          </p>
@@ -84,9 +84,9 @@ label: case-study
       </div>
       <div class="container-one-third shift-back">
          <div class="caption-margin">
-            <h4 class="caption">
+            <div class="caption t-meta">
                Early idea exploration and concept testing on paper. Focus is on leveraging sequence continuity to surface hidden patters.
-            </h4>
+            </div>
          </div>
       </div>
 
@@ -97,9 +97,9 @@ label: case-study
       </div>
       <div class="container-one-third shift-back">
          <div class="caption-margin">
-            <h4 class="caption">
+            <div class="caption t-meta">
                I prototyped in code using <a href="https://processing.org/" target="_blank" rel="noopener noreferrer" class="tooltip" data-tooltip="Visit Processing website">Processing.js</a> to advance the concept and test at scale with real-life data.
-            </h4>
+            </div>
          </div>
       </div>
 
@@ -110,12 +110,12 @@ label: case-study
       </div>
       <div class="container-one-third shift-back">
          <div class="caption-margin">
-            <h4 class="caption">
+            <div class="caption t-meta">
                Each sequence is a line (Bezier curve). When letters in the sequence are the same (conserved), we bundle the lines together. Otherwise, we pull them apart.
-            </h4>
-            <h4 class="caption">
+            </div>
+            <div class="caption t-meta">
                This simple rule of visualisation exposes patterns in data that would otherwise remain hidden.
-            </h4>
+            </div>
          </div>
       </div>
 
@@ -127,7 +127,7 @@ label: case-study
             I managed the project, led design work, supervised software development, contributed front-end code, and oversaw launch to the scientific community.
          </p>
 
-         <h3>The Solution</h3>
+         <h2 class="t-section">The Solution</h2>
          <p>
             Sequence Bundles is a novel MSA visualisation tool that exposes patterns in sequence data that would otherwise remain hidden. By preserving sequence continuity, the method provides meaningful visualisation that makes it possible to observe important residue correlations and uncover hidden sequence motifs.
          </p>
@@ -141,15 +141,15 @@ label: case-study
          </div>
          <div class="container-one-third shift-back">
             <div class="caption-margin">
-               <h4 class="caption">
+               <div class="caption t-meta">
                   Sequence Bundles overcomes the limitations of a pLogo by visualising relational sequence motifs.
-               </h4>
-               <h4 class="caption">
+               </div>
+               <div class="caption t-meta">
                   I found new patters in MSA data with Sequence Bundles. For example, a bifurcation in the general consensus sequence in positions 19–23 cannot be easily found using traditional methods (Figure 6).
-               </h4>
-               <h4 class="caption">
+               </div>
+               <div class="caption t-meta">
                   Data source: <a href="http://biovis.net/year/2013/info/redesign-contest.html" target="_blank" rel="noopener noreferrer" class="tooltip" data-tooltip="Visit BioVis 2013 contest">BioVis 2013</a>
-               </h4>
+               </div>
             </div>
          </div>
 
@@ -166,9 +166,9 @@ label: case-study
       </div>
       <div class="container-one-third shift-back">
          <div class="caption-margin">
-            <h4 class="caption">
+            <div class="caption t-meta">
                Alvis desktop app. It uses Sequence Bundles as its central visualisation tool. I led closed beta launch for Alvis. Later it was open-sourced by EMBL-EBI.
-            </h4>
+            </div>
          </div>
       </div>
 
@@ -179,14 +179,14 @@ label: case-study
       </div>
       <div class="container-one-third shift-back">
          <div class="caption-margin">
-            <h4 class="caption">
+            <div class="caption t-meta">
                Sequence Bundles web app. I designed and co-developed the frontend. Backend service built in partnership with the <a href="https://www.ebi.ac.uk/research/goldman/" target="_blank" rel="noopener noreferrer" class="tooltip" data-tooltip="Visit Goldman Group page">Goldman Group</a> at EMBL-EBI.
-            </h4>
+            </div>
          </div>
       </div>
 
       <div class="container-two-thirds shift">
-         <h3>The Result</h3>
+         <h2 class="t-section">The Result</h2>
          <p>
             Sequence Bundles was published in peer-reviewed journals and won industry recognition.
          </p>
@@ -205,9 +205,9 @@ label: case-study
       </div>
       <div class="container-one-third shift-back">
          <div class="caption-margin">
-            <h4 class="caption">
+            <div class="caption t-meta">
                User feedback shared in close beta by Meng Xu, Director of Bioinformatics at Hampton Creek.
-            </h4>
+            </div>
 
          </div>
       </div>

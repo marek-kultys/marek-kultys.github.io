@@ -7,7 +7,7 @@ label: blog-post
 	<div class="container">
 		<div class="container-two-thirds shift">
 			<div class="entry">
-				<h4>Published in {{ page.date | date: "%B %Y" }}</h4>
+				<div class="t-meta">Published in {{ page.date | date: "%B %Y" }}</div>
 				<br>
 				{{ content }}
 			</div>

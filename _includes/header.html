@@ -1,24 +1,30 @@
 <div class="container">
    <div class="container-one-third">
-      <h1>
+      <div class="t-display">
          <a class="mutedlink tooltip" href="/" data-tooltip="Go to home">{{ site.data.mk.name }}</a>
          {% if page.label == "blog-post" %}
             <span class="backlink"> / <a href="/blog" class="tooltip" data-tooltip="Back to Blog">Blog</a></span>
          {% elsif page.label == "case-study" %}
             <span class="backlink"> / <a href="/case-studies" class="tooltip" data-tooltip="Back to Cases">Cases</a></span>
          {% endif %}
-      </h1>
+      </div>
    </div>
    <div class="container-two-thirds">
+      {% comment %}
+         The page's ONE <h1>. A post's title and a normal page's headline are that page's
+         main heading, so they carry the h1. A case study does NOT: its real heading is
+         the longer one in the body, so the short front-matter title stays a plain div.
+         .t-headline keeps all three looking exactly as they did as <h2>.
+      {% endcomment %}
       {% if page.label == "blog-post" %}
-         <h2>{{ page.title }}</h2>
+         <h1 class="t-headline">{{ page.title }}</h1>
       {% elsif page.label == "case-study" %}
-         <h2>{{ page.title }}</h2>
+         <div class="t-headline">{{ page.title }}</div>
       {% else %}
-         <h2>
+         <h1 class="t-headline">
             {% assign variable = site.data.pages[page.label] %}
             {{ variable.headline }}
-         </h2>
+         </h1>
       {% endif %}
    </div>
 </div>
