@@ -361,8 +361,16 @@ div.highlighter-rouge { // Rouge's outer wrapper owns the block spacing.
 
 
 // MEDIA
+// `height: auto` is LOAD-BEARING and must not be removed as redundant.
+// Every <img> on the site carries width= and height= attributes so the browser can
+// reserve the right box before the file arrives and the text below it stops jumping.
+// CSS width overrides the width attribute, but NOTHING here overrides the height
+// attribute -- so without this line every image renders 100% wide at its exact
+// intrinsic pixel height, i.e. squashed or stretched at every viewport except one.
+// The two changes are a pair: dimensions in the markup, `height: auto` here.
 img {
    width: 100%;
+   height: auto;
    // @include media($portrait) {
    //    width: 90%;
    //    margin-left: 5%;

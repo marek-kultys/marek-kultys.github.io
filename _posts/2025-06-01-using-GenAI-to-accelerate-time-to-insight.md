@@ -15,7 +15,7 @@ I recently ran a design concept test that normally takes >17h. With GenAI, I cut
 <!--more-->
 
 <div class="block-margin">
-   <img src="/img/posts/01-06-2025/genai-table.jpg" class="shadow" alt="Table with the breakdown of time savings for various research tasks done with and without GenAI tools">
+   <img src="/img/posts/01-06-2025/genai-table.jpg" class="shadow" alt="Table with the breakdown of time savings for various research tasks done with and without GenAI tools" width="1600" height="796">
 </div>
 
 ### 1. Research plan

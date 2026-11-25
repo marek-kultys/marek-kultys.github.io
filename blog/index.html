@@ -16,8 +16,21 @@ permalink: /blog/
 						{% include byline.html post=post %}
 					</div>
 					{{ post.excerpt }}
+					{%- comment -%}
+						This single tag renders a thumbnail for EVERY post, so the page was
+						downloading 4.68 MB of images -- the heaviest page on the site -- before
+						the visitor had scrolled past the first entry. Only the top post stays
+						eager; the rest load as they come into view.
+
+						No width=/height= here, unlike everywhere else on the site: the src is
+						{{ post.image }}, so the file is not known until build time and its pixel
+						size cannot be read in Liquid without a plugin (GitHub Pages will not run
+						one). Putting the dimensions in each post's front matter would make the
+						image size a second hand-maintained fact that drifts, like `link:` already
+						does. So this one page still shifts a little as thumbnails arrive.
+					{%- endcomment -%}
 					{% if post.image %}
-						<a href="{{ post.link }}" class="image-link tooltip" data-tooltip="Read post"><img src="{{ post.image }}" class="shadow" alt="{{ post.title }}"></a>
+						<a href="{{ post.link }}" class="image-link tooltip" data-tooltip="Read post"><img src="{{ post.image }}" class="shadow" alt="{{ post.title }}"{% unless forloop.first %} loading="lazy"{% endunless %}></a>
 					{% endif %}
 				</div>
 			{% endfor %}
