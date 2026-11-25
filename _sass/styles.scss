@@ -76,15 +76,9 @@ main {
 }
 
 .footer {
-   // min-height, NOT height. With a fixed height, anything taller than
-   // (10em - 6em of padding-top) overflows the box instead of growing it, and then
-   // eats the page's bottom padding from below. That is how the footer came to sit
-   // 9px from the bottom of the page. It bites on narrow screens, where the
-   // copyright line wraps to two lines and a fixed box overflowed by 17px.
-   min-height: 10em;
+   height: 10em;
    padding-top: 6em;
-   // Bottom spacing lives on .outer-container -- see the note there for why a margin
-   // here did nothing at all.
+   margin-bottom: $large-leading;
    .t-meta {
       color: $dark-grey;
    }
@@ -314,15 +308,6 @@ div.highlighter-rouge { // Rouge's outer wrapper owns the block spacing.
 .outer-container {
    padding-left: 1em;
    padding-right: 1em;
-   // PADDING, not margin, and it belongs HERE rather than on .footer.
-   // .footer is the last child of <footer>, the last child of .outer-container, the
-   // last child of <body>. With no padding or border on any of them a bottom MARGIN
-   // collapses straight out of the document and adds nothing to its height -- the
-   // old `margin-bottom` on .footer did exactly that and had never had any effect,
-   // leaving the last line of footer text 9px from the bottom of the page.
-   // Padding cannot collapse, so the space survives. If you ever move this back to a
-   // margin, check the real gap in a browser rather than trusting the declaration.
-   padding-bottom: $huge-leading;
    @include outer-container(100%);
    max-width: 1620px;
 }
