@@ -58,6 +58,10 @@ contact:
    headline: Get in touch
    link: /contact
 
+privacy:
+   headline: Privacy
+   link: /privacy
+
 error404:
    headline: 404
    link: /404
