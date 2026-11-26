@@ -14,8 +14,27 @@ permalink: /blog/
 					it takes the tighter gap instead of a full section break. Driven by
 					forloop.first so it follows the top post rather than a hard-coded position.
 				{%- endcomment -%}
+				{%- comment -%}
+					Where this entry points, worked out ONCE and used by both the heading and
+					the thumbnail below. They used to disagree: the heading fell back to
+					post.url when `link:` was missing, the thumbnail did not, so a post written
+					the way CLAUDE.md asks for -- no `link:`, let the URL derive itself -- would
+					have given its thumbnail href="", which browsers resolve to the current
+					page. The thumbnail would have silently reloaded /blog/ instead of opening
+					the post.
+
+					`default` is the right filter rather than a hand-written conditional: Liquid
+					treats nil, false AND the empty string as absent, and the three unpublished
+					drafts carry an empty `link:` rather than none at all.
+
+					Note for the next person writing one of these notes: a Liquid comment is NOT
+					inert. Liquid still scans it for block tags, so an if-tag written out in
+					prose in here fails the whole build with "Syntax Error in tag". Describe the
+					tag, do not type it.
+				{%- endcomment -%}
+				{%- assign post_destination = post.link | default: post.url -%}
 				<div class="entry{% if forloop.first %} opening{% endif %}">
-					<h2 class="t-section"><a href="{% if post.link %} {{ post.link }} {% else %} {{ post.url }} {% endif %}" class="tooltip" data-tooltip="Read post">{{ post.title }}</a></h2>
+					<h2 class="t-section"><a href="{{ post_destination }}" class="tooltip" data-tooltip="Read post">{{ post.title }}</a></h2>
 					<div class="t-meta">
 						{% include byline.html post=post %}
 					</div>
@@ -34,7 +53,7 @@ permalink: /blog/
 						does. So this one page still shifts a little as thumbnails arrive.
 					{%- endcomment -%}
 					{% if post.image %}
-						<a href="{{ post.link }}" class="image-link tooltip" data-tooltip="Read post"><img src="{{ post.image }}" class="shadow" alt="{{ post.title }}"{% unless forloop.first %} loading="lazy"{% endunless %}></a>
+						<a href="{{ post_destination }}" class="image-link tooltip" data-tooltip="Read post"><img src="{{ post.image }}" class="shadow" alt="{{ post.title }}"{% unless forloop.first %} loading="lazy"{% endunless %}></a>
 					{% endif %}
 				</div>
 			{% endfor %}
