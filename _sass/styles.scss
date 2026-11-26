@@ -21,7 +21,12 @@ $small-type: 1*$font-unit;
 $semi-type: 1.1*$font-unit;
 $medium-type: 1.25*$font-unit;
 $large-type: 1.7*$font-unit;
-$tooltip-type: 18px;
+$tooltip-type: 18px;   // Used ONLY by the disabled .tooltip block further down.
+                       // Unused on purpose; do not delete it as dead code.
+// Inline code sits INSIDE text that is already sized in em, so its size has to
+// be a ratio of its parent rather than a multiple of $font-unit like the scale
+// above. Building it from $font-unit would compound and render code oversized.
+$code-type: 0.85em;
 
 
 // Declare leading
@@ -33,11 +38,22 @@ $medium-leading: 1.4*$leading-unit;
 $large-leading: 1.66*$leading-unit;
 $huge-leading: 2.4*$leading-unit;
 
+// Gap above a section heading. Deliberately in REM, not em, and this is load-bearing.
+// .entry sets margin-bottom: $huge-leading*2, which is 4.8em resolved against the 16px
+// body = 77px. A heading's own em resolves against ITS font-size, which is larger, so
+// 4.8em on a heading would come out far bigger and the two rhythms would not match.
+// rem pins both to the same 16px root. 4.8rem is the same 77px, by construction.
+$section-gap: 4.8rem;
+
+
 // Declare other styles
 $line-thickness: 1px;
 $border-radius: 4px;
 $line-style: solid;
 $underline: $line-thickness $line-style $black;
+// No monospace webfont is loaded on purpose: a system stack costs no request
+// and renders instantly. Barlow has no monospace cut.
+$mono-font: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
 
 
 
@@ -68,10 +84,16 @@ main {
 }
 
 .footer {
-   height: 10em;
+   // min-height, NOT height. With a fixed height, anything taller than
+   // (10em - 6em of padding-top) overflows the box instead of growing it, and then
+   // eats the page's bottom padding from below. That is how the footer came to sit
+   // 9px from the bottom of the page. It bites on narrow screens, where the
+   // copyright line wraps to two lines and a fixed box overflowed by 17px.
+   min-height: 10em;
    padding-top: 6em;
-   margin-bottom: $large-leading;
-   h4 {
+   // Bottom spacing lives on .outer-container -- see the note there for why a margin
+   // here did nothing at all.
+   .t-meta {
       color: $dark-grey;
    }
    a {
@@ -96,7 +118,25 @@ a {
    }
 }
 
-p, h1, h2, h3, h4, h5, ol, ul, li {
+// TYPE ROLES
+// h1-h5 were being used as a TYPE SCALE rather than a document outline: of the site's
+// 221 <h4> elements, 219 were captions, footer credits, post bylines and "Case study"
+// eyebrow labels. That made every page announce a long list of fake headings to a screen
+// reader, gave each case study two <h1> elements, and produced an h2 -> h4 jump on 28
+// pages. The five .t-* classes below carry exactly the same declarations as h1-h5, so an
+// element can take the heading LEVEL its outline needs while keeping the SIZE the design
+// needs -- and something that was never a heading can stop being one without changing by
+// a single pixel.
+//
+// Converted non-headings become <div>, never <p>. Two reasons, both load-bearing:
+// p sets margin-bottom (headings here are margin: 0), and `p:last-of-type` below removes
+// the margin from the last <p> among its siblings -- so introducing one new <p> silently
+// moves that margin onto a different paragraph. A <div> has neither behaviour.
+//
+// The .t-* classes MUST stay in the font-family rule below. Nothing sets a font on
+// <body>, so a bare <div> would fall back to the browser's default serif.
+p, h1, h2, h3, h4, h5, ol, ul, li,
+.t-display, .t-headline, .t-section, .t-meta, .t-note {
    font-family: 'Barlow', sans-serif;
    color: $black;
    margin: 0px;
@@ -112,7 +152,7 @@ p { // body text
    }
 }
 
-h1 { // used for MK
+h1, .t-display { // site name / case-study heading
    font-weight: 600;
    font-size: $large-type;
    line-height: $medium-leading;
@@ -122,25 +162,121 @@ h1 { // used for MK
    }
 }
 
-h2 { // used for page title
+h2, .t-headline { // page headline
    font-weight: 400;
    font-size: $large-type;
    line-height: $medium-leading;
 }
 
-h3 { // used for subtitles
+// SECTION RHYTHM
+// Headings carry margin: 0 (see the type rule above), so every gap above a heading is
+// really the bottom margin of whatever precedes it. The site builds pages three ways and
+// they used to disagree: pages made of per-section .entry blocks got 77px, blog posts and
+// case studies got 26px where a heading followed a <p>, and 0px where a heading was the
+// first child of its container. This puts the same gap on the heading itself.
+//
+// Two collapsing behaviours are doing the work, and neither is an accident:
+//   - After a <p>, the p's 26px bottom margin and this top margin are adjacent siblings,
+//     so they collapse to the LARGER of the two -- 77px, not 103px.
+//   - Where the heading is the first child of a .container-* div with no padding or
+//     border, this margin collapses OUT of that div and applies above it instead, which
+//     lands the space in the same visible place.
+// So do not "fix" this by adding padding to those containers: padding would stop the
+// collapse and you would get two gaps stacked.
+//
+// h1 is excluded on purpose. It is the case-study hero heading and usually the first
+// thing in the article, where this margin would collapse to the top and push the whole
+// page down below the divider.
+// The [class] half is NOT redundant, and removing it silently breaks case studies.
+// The shared `margin: 0` rule above lists .t-section and .t-meta by class. A class scores
+// 0,1,0 and beats two element names (article h2 = 0,0,2), so every <h2 class="t-section">
+// -- which is 60 of the site's headings, i.e. every case-study section -- ignored the bare
+// selector and stayed at 0. Adding [class] scores 0,1,2 and wins. Blog posts happened to
+// work either way only because kramdown emits bare <h3> with no class at all.
+article h2, article h3,
+article h2[class], article h3[class] {
+   margin-top: $section-gap;
+}
+
+// Exception: a heading that opens the block directly after a DIVIDER. A divider is
+// already a section break, so adding the 77px gap on top of one stacks two breaks and
+// reads as a hole rather than a rhythm. The live site has always had these tight; the
+// section rule put 77px above all ten of them.
+//
+// :first-child is required at EVERY level, and that is the whole point. On a case study
+// the post-divider container holds several .container-two-thirds blocks -- The Challenge,
+// then images, then The Solution -- and each of those blocks starts with a heading. A
+// loose `.divider-row + .container h2:first-child` would zero The Solution too, exactly
+// the over-match that `.entry:first-child > h2:first-child` caused earlier. Requiring the
+// chain to start at the container keeps it to the one heading that touches the divider.
+//
+// Only two shapes exist in the markup: the heading is the container's own first child
+// (the Appendix blocks), or it is the first child of the container's first child (every
+// Challenge heading). Both are written out rather than collapsed into a descendant
+// selector, so a third shape has to be added deliberately.
+//
+// Scores 0,4,1 and 0,3,1, both above `article h2[class]` at 0,1,2.
+.divider-row + .container > h2:first-child,
+.divider-row + .container > h3:first-child,
+.divider-row + .container > :first-child > h2:first-child,
+.divider-row + .container > :first-child > h3:first-child {
+   margin-top: 0;
+}
+
+// Exception: a heading directly after another heading. That is a label and its title --
+// "Appendix" above the appendix's real heading, on Immunocore and Vivli -- not two
+// sections. The pair belongs together and the gap goes above the pair, which the rule
+// above has already set to 0.
+//
+// The [class] variants are not redundant, for the same reason they are not redundant on
+// the section rule itself: the second heading in both pairs happens to carry no class, so
+// the bare selectors at 0,0,3 beat `article h2` at 0,0,2 -- but a classed one would need
+// 0,1,3 to beat `article h2[class]` at 0,1,2.
+article h2 + h2, article h2 + h3, article h3 + h2, article h3 + h3,
+article h2 + h2[class], article h2 + h3[class],
+article h3 + h2[class], article h3 + h3[class] {
+   margin-top: 0;
+}
+
+// Exception: the item that OPENS a page, sitting directly under the divider rather than
+// after content. A section gap there reads as a hole, not a break.
+//
+// Zero, not a smaller gap. Every other page already starts its first text 35px below the
+// divider because nothing there carries a top margin -- Contact's <ol>, Influences' and
+// the privacy page's first <p>, a case study's "Case study" label. Giving the opening
+// heading any margin at all makes the listings the only pages that start lower.
+// Marked by hand with .opening on the two listings (Case studies, Writing and speaking)
+// and the 404.
+//
+// It is marked explicitly rather than selected structurally, and that is the point. The
+// obvious `.entry:first-child > h2:first-child` ALSO matched Influences and Vivli, where
+// content resumes after an image in a new container whose first child is an .entry -- so
+// three mid-page headings silently dropped and Influences lost 101px. :first-child is
+// relative to the parent, not to the page.
+//
+// It matches whatever comes FIRST, not specifically a heading: a listing and the 404 open
+// with an h2, a blog post opens with its "Published in" byline, which would otherwise take
+// margin-top from `.entry .t-meta`. One marker, one rule, same result on all four.
+//
+// Specificity scores 0,3,0 and must outrank BOTH `article h2[class]` (0,1,2) and
+// `.entry .t-meta` (0,2,0) above.
+.entry.opening > :first-child {
+   margin-top: 0;
+}
+
+h3, .t-section { // section headings
    font-weight: 600;
    font-size: $medium-type;
    line-height: $large-leading;
 }
 
-h4 { // used for post metadata
+h4, .t-meta { // captions, bylines, footer, eyebrows
    font-weight: 200;
    font-size: $small-type;
    line-height: $medium-leading;
 }
 
-h5 { // used for image annotations
+h5, .t-note { // image annotations
    font-weight: 200;
    font-size: $micro-type;
    line-height: $small-leading;
@@ -196,8 +332,101 @@ sub {
 }
 
 .appendix {
-   p, h3, ul {
+   p, h3, .t-section, ul {
       font-size: $semi-type;
+   }
+}
+
+// CODE
+// Jekyll + Rouge wrap a fenced ``` block as:
+//    div.highlighter-rouge > div.highlight > pre.highlight > code > span.<token>
+// A ~~~ fence or an indented block produces a bare pre > code with no wrappers and
+// no spans, so both shapes are styled here. Token colours come from the site
+// palette rather than an imported Rouge theme, which would fight the Miami
+// gradient. overflow-x on pre is load-bearing: without it a single long line of
+// code widens the whole page on mobile instead of scrolling inside its own box.
+
+code { // inline code, e.g. `permalink`
+   font-family: $mono-font;
+   font-size: $code-type;
+   background: $cyan50;
+   border-radius: $border-radius;
+   padding: 0 $nano-leading;
+   // Load-bearing. A long unbroken token (a path, a flag, a URL) does not wrap at
+   // slashes or colons, so without this it runs past the right edge of the page.
+   // html{overflow-x:hidden} then CLIPS it rather than scrolling, silently eating
+   // the end of the string on narrow screens. Measured at 375px: 402px wide page.
+   overflow-wrap: break-word;
+}
+
+pre { // code block
+   font-family: $mono-font;
+   font-size: $small-type;
+   line-height: $medium-leading;
+   color: $black;
+   background: $cyan50;
+   border: $line-thickness $line-style $light-grey;
+   border-radius: $border-radius;
+   padding: $small-leading;
+   margin: 0 0 $medium-leading 0;
+   max-width: 100%;
+   overflow-x: auto;
+   code { // undo the inline treatment for code inside a block
+      font-size: inherit;
+      background: none;
+      border-radius: 0;
+      padding: 0;
+      overflow-wrap: normal; // a block scrolls sideways; it must not re-wrap
+   }
+}
+
+// EMBEDS
+.twitter-tweet {
+   // This is the quoted text inside the Immunocore tweet embed, and it is only ever
+   // VISIBLE when X's script fails to replace the blockquote with its card: the visitor
+   // blocks platform.twitter.com, the script is slow, or X throttles them and returns an
+   // iframe sized to 0x0 -- all three observed. The fallback then shows, and it contains
+   // "pic.twitter.com/fIQX8VoJqh": 26 characters with no space or hyphen to break at, and
+   // neither a slash nor a dot is a wrap opportunity.
+   //
+   // Measured at 320px: the link reached 345px on a 320px page. html{overflow-x:hidden}
+   // does not scroll, it CLIPS, so the end of the string was cut off with no scrollbar to
+   // say so. Same failure and same fix as `code` above -- see that note too.
+   //
+   // overflow-wrap is inherited, so this one declaration covers the link without needing
+   // a descendant selector.
+   overflow-wrap: break-word;
+}
+
+div.highlighter-rouge { // Rouge's outer wrapper owns the block spacing.
+   // The div. prefix matters: kramdown puts .highlighter-rouge on INLINE <code>
+   // elements as well, and a bare .highlighter-rouge rule would target those too.
+   margin-bottom: $medium-leading;
+   .highlight, pre {
+      margin-bottom: 0;
+   }
+}
+
+.highlight { // Rouge token colours, restrained on purpose
+   .c, .c1, .cm, .cs, .cd { // comments
+      color: $dark-grey;
+      font-style: italic;
+   }
+   .k, .kc, .kd, .kn, .kp, .kr, .kt { // keywords
+      font-weight: 600;
+   }
+   .s, .s1, .s2, .sb, .sc, .sd, .se, .sh, .si, .sx, .sr, .ss { // strings
+      color: $cyanA700;
+   }
+   .m, .mi, .mf, .mh, .mo, .mb { // numbers
+      color: $cyanA700;
+   }
+   .nb, .nc, .nf, .nn { // builtins, classes, functions, namespaces
+      font-weight: 600;
+   }
+   .err {
+      color: $white;
+      background: $cyanA700;
    }
 }
 
@@ -207,6 +436,15 @@ sub {
 .outer-container {
    padding-left: 1em;
    padding-right: 1em;
+   // PADDING, not margin, and it belongs HERE rather than on .footer.
+   // .footer is the last child of <footer>, the last child of .outer-container, the
+   // last child of <body>. With no padding or border on any of them a bottom MARGIN
+   // collapses straight out of the document and adds nothing to its height -- the
+   // old `margin-bottom` on .footer did exactly that and had never had any effect,
+   // leaving the last line of footer text 9px from the bottom of the page.
+   // Padding cannot collapse, so the space survives. If you ever move this back to a
+   // margin, check the real gap in a browser rather than trusting the declaration.
+   padding-bottom: $huge-leading;
    @include outer-container(100%);
    max-width: 1620px;
 }
@@ -260,8 +498,16 @@ sub {
 
 
 // MEDIA
+// `height: auto` is LOAD-BEARING and must not be removed as redundant.
+// Every <img> on the site carries width= and height= attributes so the browser can
+// reserve the right box before the file arrives and the text below it stops jumping.
+// CSS width overrides the width attribute, but NOTHING here overrides the height
+// attribute -- so without this line every image renders 100% wide at its exact
+// intrinsic pixel height, i.e. squashed or stretched at every viewport except one.
+// The two changes are a pair: dimensions in the markup, `height: auto` here.
 img {
    width: 100%;
+   height: auto;
    // @include media($portrait) {
    //    width: 90%;
    //    margin-left: 5%;
@@ -326,6 +572,36 @@ img {
    }
 }
 
+// DISABLED ON PURPOSE, AND KEPT ON PURPOSE. Do not delete this block, and do not
+// delete the 65 `class="tooltip" data-tooltip="..."` pairs in the markup that go with
+// it (336 instances once the header, footer and nav includes are rendered across every
+// page). Marek wrote those strings deliberately — "Open Tufts research PDF", "View IMCR
+// on Nasdaq" — and judged the feature overkill rather than wrong. Keeping the markup
+// costs 161 gzipped bytes on the heaviest page, which is nothing; re-authoring 65
+// strings later would cost hours.
+//
+// IF YOU RE-ENABLE THIS, FIX THE CLIPPING FIRST. Measured by rebuilding the site and
+// injecting this exact CSS, with real Barlow metrics, on /case-studies/ (23 tooltips):
+//
+//     960px  15 of 23 clipped, worst overruns the viewport by 132px
+//    1024px  13 of 23 clipped, worst 122px
+//    1280px   9 of 23 clipped, worst  84px
+//    1440px   6 of 23 clipped, worst  60px
+//    1920px   none
+//
+// `left: 105%` pushes the tooltip right of its link and `white-space: nowrap` stops it
+// wrapping, so a link in the right-hand column overflows the page. html{overflow-x:hidden}
+// then CLIPS it instead of scrolling, so the text ends mid-word with nothing to indicate
+// it. Note it is WORST at 960px — the very width where @include media($landscape) turns
+// it on. A fix: flip the tooltip to the left for right-column links, or drop nowrap and
+// give it a max-width.
+//
+// THIS IS NOT AN ACCESSIBILITY FEATURE, whatever the name suggests. There is no :focus
+// rule, so a keyboard user never triggers it; the $landscape query excludes every touch
+// device; and data-tooltip is not ARIA, so it adds nothing to a link's accessible name.
+// It is an affordance for sighted mouse users on desktop. Adding :focus-visible beside
+// :hover is what would start making it true for keyboard users.
+//
 // .tooltip {
 //    @include media($landscape){
 //       position: relative;
@@ -428,7 +704,7 @@ img {
       margin-top: $huge-leading;
       margin-bottom: $large-leading;
    }
-   h4{
+   .t-meta {
       margin-top: $micro-leading;
       margin-bottom: $micro-leading;
    }
@@ -487,7 +763,7 @@ img {
    }
 }
 
-// #fix-reduced-margin {
+// .fix-reduced-margin {
 //    @include media($landscape){
 //       margin-bottom: $huge-leading;
 //    }

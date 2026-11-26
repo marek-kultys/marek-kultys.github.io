@@ -6,8 +6,14 @@ label: blog-post
 <section>
 	<div class="container">
 		<div class="container-two-thirds shift">
-			<div class="entry">
-				<h4>Published on {{ page.date | date: "%-d %B %Y" }}</h4>
+			{%- comment -%}
+				`opening` marks the block that starts the page, the same marker the two
+				listings and the 404 use. It zeroes the top margin on whatever comes first --
+				here the byline, which otherwise picks up $micro-leading from `.entry .t-meta`
+				and starts a post 13px lower than every other page on the site.
+			{%- endcomment -%}
+			<div class="entry opening">
+				<div class="t-meta">Published in {{ page.date | date: "%B %Y" }}</div>
 				<br>
 				{{ content }}
 			</div>

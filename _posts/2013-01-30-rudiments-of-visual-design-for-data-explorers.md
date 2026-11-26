@@ -2,6 +2,7 @@
 layout: blog-post
 label: blog-post
 title: Rudiments of Visual Design for Data Explorers
+description: "My write-up in the Parsons Journal for Information Mapping, from my first IEEEVis workshop on the visual language of data visualisation."
 date: January 2013
 link: https://www.researchgate.net/publication/281716612_Visual_Alpha-Beta-Gamma_Rudiments_of_Visual_Design_for_Data_Explorers
 image: /img/posts/30-01-2013/time-is-passing-alpha3.png

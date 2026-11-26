@@ -2,6 +2,7 @@
 layout: blog-post
 label: blog-post
 title: Moving from the wet lab to the test bench
+description: "After 15 years in the life sciences I moved into automotive engineering. The design principles I bring with me from drug discovery, trials and genomics."
 date: January 2026
 link: /blog/2026/01/01/moving-from-wet-lab-to-test-bench/
 image: /img/posts/08-01-2026/wet-lab-to-test-bench.jpg
@@ -42,7 +43,7 @@ Despite recent breakthroughs in biomedical sciences, work in the industry remain
 This isn't unique to life sciences. Automotive engineers I've spoken to feel similarly. My final principle is: use design to restore the joy of engineering. My ambition at Secondmind is to design AI tools that augment engineers' capabilities and reconnect them with what they love — the awe of discovery, the satisfaction of solving ambitious problems, and the joy of building amazing things.
 
 <div class="block-margin">
-   <img src="/img/posts/08-01-2026/wet-lab-to-test-bench.jpg" class="shadow" alt="Cover illustration">
+   <img src="/img/posts/08-01-2026/wet-lab-to-test-bench.jpg" class="shadow" alt="Cover illustration" width="1440" height="736">
 </div>
 
 [Posted on LinkedIn](https://www.linkedin.com/posts/marek-kultys_after-15-years-in-the-life-sciences-i-moved-share-7414997652754432000-wjVD)

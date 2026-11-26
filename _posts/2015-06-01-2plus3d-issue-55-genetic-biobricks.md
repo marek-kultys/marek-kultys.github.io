@@ -1,7 +1,9 @@
 ---
 layout: blog-post
 label: blog-post
+lang: pl
 title: Genetic Biobricks (Genetyczne klocki)
+description: "My article for issue #55 of the Polish design quarterly 2+3D, on synthetic biology and the roles designers are finding in it. Full text in Polish."
 date: June 2015
 image: /img/posts/01-06-2015/2plus3d-issue-55-genetic-biobricks-alpha2.png
 published: true
@@ -15,7 +17,7 @@ For issue #55 of the 2+3D Polish design quarterly, I wrote an article about synt
 <!--more-->
 
 <div class="block-margin">
-   <img src="/img/posts/01-06-2015/2plus3d-issue-55-genetic-biobricks-alpha2.png" class="shadow" alt="Title spread from the 'Genetyczne klocki' article in 2+3D design magazine.">
+   <img src="/img/posts/01-06-2015/2plus3d-issue-55-genetic-biobricks-alpha2.png" class="shadow" alt="Title spread from the 'Genetyczne klocki' article in 2+3D design magazine." width="1080" height="731">
 </div>
 
 
@@ -39,19 +41,19 @@ Biologię syntetyczną cechuje głęboka inspiracja światem inżynierii mechani
 
 
 <div class="block-margin">
-   <img src="/img/posts/01-06-2015/gfp.jpg" class="shadow" alt="Petri dish with a genetically engineered bacteria culture that glows thanks to the GFP protein.">
+   <img src="/img/posts/01-06-2015/gfp.jpg" class="shadow" alt="Petri dish with a genetically engineered bacteria culture that glows thanks to the GFP protein." width="1200" height="691" loading="lazy">
 </div>
 
 
 Popularnym przykładem zastosowania klocków BioBrick jest [projekt przełącznika](https://www.nature.com/articles/35002131) w bakterii *Escherichia coli*. Kombinacja pięciu standardowych klocków pozwala zmodyfikowanej *E. coli* reagować na bodźce zewnętrzne w sposób widzialny dla ludzkiego oka. Wzrost temperatury otoczenia uruchamia w bakterii produkcję białka zielonej fluorescencji (GFP, ang. Green Fluorescent Protein), które w świetle UV jarzy się na zielono. Natomiast w reakcji na wzrost stężenia enzymu IPTG w środowisku (IPTG stosuje się w biotechnologii jako regulator ekspresji genów), bakteria zatrzymują produkcję GFP.
 
-W ten sposób można projektować skomplikowane systemy warunkujące pożądane zachowania w organizmach żywych. Massachusetts Institute of Technology (MIT) w Bostonie prowadzi Rejestr Standardowych Części Biologicznych (Registry of Standard Biological Parts), który co roku w ramach konkursu iGEM wzbogaca się o nowe klocki BioBricks. [iGEM](www.igem.org) to międzynarodowy zlot studentów i praktyków biologii syntetycznej, którzy rywalizują między sobą w tworzeniu nowych BioBricks i ich nowatorskim zastosowaniu. To także główne forum biologii syntetycznej na świecie. Poniżej omówienie kilku projektów — przykładów współpracy pomiędzy naukowcami, inżynierami a dizajnerami — które powstały na konkurs iGEM.
+W ten sposób można projektować skomplikowane systemy warunkujące pożądane zachowania w organizmach żywych. Massachusetts Institute of Technology (MIT) w Bostonie prowadzi Rejestr Standardowych Części Biologicznych (Registry of Standard Biological Parts), który co roku w ramach konkursu iGEM wzbogaca się o nowe klocki BioBricks. [iGEM](https://www.igem.org) to międzynarodowy zlot studentów i praktyków biologii syntetycznej, którzy rywalizują między sobą w tworzeniu nowych BioBricks i ich nowatorskim zastosowaniu. To także główne forum biologii syntetycznej na świecie. Poniżej omówienie kilku projektów — przykładów współpracy pomiędzy naukowcami, inżynierami a dizajnerami — które powstały na konkurs iGEM.
 
 
 ### Od spekulacji do realizacji
 Ze względu na potencjał łatwego i szerokiego wykorzystania w praktyce biologia syntetyczna od samego początku niosła ze sobą obietnicę lepszej przyszłości. Jednak, jak w przypadku każdej technologii, pozytywne rezultaty biologii syntetycznej nie są czymś oczywistym i wymagają krytycznego, świadomego podejścia ze strony wszystkich, których ona dotyczy. Z tego między innymi powodu iGEM wyróżnia co roku projekty, które do debaty o biologii syntetycznej włączają każdego z nas.
 
-Na iGEM 2010 zespół studentów projektowania z Uniwersytetu-Bauhaus w Weimarze i nauk ścisłych z Uniwersytetu w Heidelbergu stworzył projekt “Super Cell”. [Super Cell](www.super-cell.org) to sklep internetowy oferujący rewolucyjne produkty powstałe dzięki wykorzystaniu biologii syntetycznej. Można w nim kupić: śmietnik na odpadki organiczne, który przetworzy je na mleko; antyalergiczne wykładziny i obicia do wnętrz stworzone z żyjącego mchu; kolekcje zamiennych części ciała wykonanych z ludzkich tkanek; modyfikowane sadzonki rodzące na jednej roślinie komplet warzyw potrzebnych do przygotowania wybranego dania. Wszystko to jest oczywiście fikcją. Jednak forma komunikacji w postaci spekulatywnych (a więc wiarygodnych) produktów pozwala wywołać w widzu szczere reakcje i umożliwia mu wypracowanie własnego, krytycznego stanowiska wobec możliwości i zagrożeń związanych z biologią syntetyczną, która — czy tego chcemy, czy nie — konsekwentnie wkracza w codzienne życie każdego z nas.
+Na iGEM 2010 zespół studentów projektowania z Uniwersytetu-Bauhaus w Weimarze i nauk ścisłych z Uniwersytetu w Heidelbergu stworzył projekt “Super Cell”. Super Cell to sklep internetowy oferujący rewolucyjne produkty powstałe dzięki wykorzystaniu biologii syntetycznej. Można w nim kupić: śmietnik na odpadki organiczne, który przetworzy je na mleko; antyalergiczne wykładziny i obicia do wnętrz stworzone z żyjącego mchu; kolekcje zamiennych części ciała wykonanych z ludzkich tkanek; modyfikowane sadzonki rodzące na jednej roślinie komplet warzyw potrzebnych do przygotowania wybranego dania. Wszystko to jest oczywiście fikcją. Jednak forma komunikacji w postaci spekulatywnych (a więc wiarygodnych) produktów pozwala wywołać w widzu szczere reakcje i umożliwia mu wypracowanie własnego, krytycznego stanowiska wobec możliwości i zagrożeń związanych z biologią syntetyczną, która — czy tego chcemy, czy nie — konsekwentnie wkracza w codzienne życie każdego z nas.
 
 Spekulacja jest dobrym bodźcem do dyskusji o biologii syntetycznej, lecz jeszcze lepszym są radykalne projekty, które zaskakują tym, że istnieją i działają na prawdę. Zespół studentów dizajnu [ArtScienceBangalore](https://artscienceblr.org/) z Indii co roku zadziwia na konkursie iGEM takimi projektami. Za każdym razem stawiają one biologię syntetyczną i pytania z nią związane w nowym świetle. W projekcie zgłoszonym na iGEM w [2010 roku](https://2010.igem.org/Team:ArtScienceBangalore/Project) projektanci z ArtScienceBangalore zaproponowali wykorzystanie omówionego wcześniej przełącznika w *E. coli* w doświadczeniu, gdzie modyfikacja genetyczna w bakterii będącej pokarmem popularnego nicienia *C. elegans* wpływa pośrednio na jego rozwój i zachowanie. Kontrolując temperaturę otoczenia i stężenie IPTG, można aktywować lub deaktywować określone procesy w *C. elegans*, czyniąc z tego wielokomórkowego organizmu miernik zmian w środowisku. Projekt jest przejmującym badaniem interakcji pomiędzy organizmami zaprojektowanymi a organizmami “naturalnymi”.
 
@@ -64,17 +66,17 @@ Z kolei w [roku 2009](https://2009.igem.org/Team:ArtScienceBangalore/Project) Ar
 Dzięki standaryzacji biologia syntetyczna pozwala wejść na wyższy poziom projektowania GMO. Istotą BioBricks jest w końcu to, by biologowie syntetyczni musieli jak najmniej myśleć o biologii na poziomie molekularnym (co zrobić, by to działało) a w całości mogli poświęcić się biologii na poziomie ludzkim (w jaki sposób stworzyć użyteczny produkt GMO). Największą barierą na przeszkodzie do korzystania z technologii BioBricks jest więc nie specjalistyczna wiedza, lecz specjalistyczny sprzęt. Wyposażenie laboratoriów jest bardzo drogie, poza zasięgiem szkół, firm, instytucji oraz konsumentów indywidualnych.
 
 <div class="block-margin">
-   <img src="/img/posts/01-06-2015/bento-lab-1.jpg" class="shadow" alt="A prototype of the Bento Lab — a portable lab kit for genetic testing.">
+   <img src="/img/posts/01-06-2015/bento-lab-1.jpg" class="shadow" alt="A prototype of the Bento Lab — a portable lab kit for genetic testing." width="1200" height="900" loading="lazy">
 </div>
 
-Z myślą o tym problemie powstał [bento•lab](www.bento.bio) — projekt laboratorium w pudełku, które dzięki niewysokiej cenie, mobilności oraz oprzyrządowaniu i oprogramowaniu open source znacząco zwiększa dostępność potrzebnych urządzeń. bento•lab zawiera trzy takie urządzenia. Nieduży, podświetlany zestaw do elektroforezy w żelu (moduł po lewej) pozwala wizualizować i rozróżniać molekuły DNA według ich rozmiaru. Kompaktowa centryfuga (w centrum) służy do separacji materiału organicznego poprzez wirowanie. Po lewej miniaturowa maszyna do reakcji łańcuchowej polimerazy (PCR, ang. Polimerase Chain Reaction) umożliwia kopiowanie wybranych sekwencji DNA w celu ich dalszego wykorzystania. Wszystko mieści się na kartce formatu A4.
+Z myślą o tym problemie powstał [bento•lab](https://www.bento.bio) — projekt laboratorium w pudełku, które dzięki niewysokiej cenie, mobilności oraz oprzyrządowaniu i oprogramowaniu open source znacząco zwiększa dostępność potrzebnych urządzeń. bento•lab zawiera trzy takie urządzenia. Nieduży, podświetlany zestaw do elektroforezy w żelu (moduł po lewej) pozwala wizualizować i rozróżniać molekuły DNA według ich rozmiaru. Kompaktowa centryfuga (w centrum) służy do separacji materiału organicznego poprzez wirowanie. Po lewej miniaturowa maszyna do reakcji łańcuchowej polimerazy (PCR, ang. Polimerase Chain Reaction) umożliwia kopiowanie wybranych sekwencji DNA w celu ich dalszego wykorzystania. Wszystko mieści się na kartce formatu A4.
 
 W przestrzeni laboratorium bento•lab może służyć jako platforma do szybkiego prototypowania i testowania BioBricks. Poza laboratorium bento•lab pomoże zapewnić dostęp do podstawowych urządzeń biohakerom, ludziom zaangażowanym w DIYbio, naukę obywatelską (citizen science) czy bio-art, ale także profesjonalistom pracującym w terenie lub w krajach rozwijających się, gdzie brakuje odpowiedniej infrastruktury laboratoryjnej. bento•lab tworzy troje aktywistów DIYbio, dwóch konstruktorów oraz dizajner — autor tego tekstu.
 
 Zaczęliśmy w 2013 roku — jeszcze pod nazwą Darwin Toolbox — reprezentując UCL (University College London) w konkursie iGEM. Jednak bardzo szybko projekt zaczął żyć własnym życiem i wszedł w cykl prototypowania oraz badań użytkowych i materiałowych opartych na bliskiej współpracy pomiędzy dizajnerami a konstruktorami. Prace nad bento•lab trwają już drugi rok, stopniowo przybliżając nas wszystkich do przyszłości, w której biologia syntetyczna będzie technologią równie otwartą i dostępną, jak poczta elektroniczna dzisiaj.
 
 <div class="block-margin">
-   <img src="/img/posts/01-06-2015/bento-lab-2.jpg" class="shadow" alt="Setting up a centrifuge spin on the Bento Lab — a portable lab kit for genetic testing.">
+   <img src="/img/posts/01-06-2015/bento-lab-2.jpg" class="shadow" alt="Setting up a centrifuge spin on the Bento Lab — a portable lab kit for genetic testing." width="1200" height="900" loading="lazy">
 </div>
 
 

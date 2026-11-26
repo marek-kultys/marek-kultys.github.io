@@ -1,2 +1,8 @@
+---
+# Front matter is here so Jekyll runs Liquid on this file and the host below
+# stays derived from _data/mk.yml rather than being a second place to edit it.
+---
 User-agent: *
 Disallow:
+
+Sitemap: {{ site.data.mk.url }}/sitemap.xml

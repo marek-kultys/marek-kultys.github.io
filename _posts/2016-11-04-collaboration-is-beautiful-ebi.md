@@ -2,6 +2,7 @@
 layout: blog-post
 label: blog-post
 title: Collaboration Is Beautiful
+description: "An interview with my Sequence Bundles co-authors James King, Nick Goldman and Roland Schwarz on how our collaboration started and what made it work."
 date: November 2016
 link: https://www.embl.org/news/science/1611-collaboration-is-beautiful/
 excerpt_separator: <!--more-->

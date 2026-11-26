@@ -1,6 +1,23 @@
-exclude: [README.md]
+# Jekyll REPLACES its default exclude list with whatever is set here — it does not
+# merge the two. The defaults are Gemfile, Gemfile.lock, node_modules and the
+# vendor/ subdirectories. Omitting them published Gemfile and Gemfile.lock to the
+# live site (both were reachable at marekkultys.com/Gemfile.lock, a public list of
+# every gem version this site is built from), and it also meant a local
+# `bundle install --path vendor/bundle` would break the build by feeding the gems
+# themselves to Jekyll as site content. Keep the defaults listed below; add to
+# them, never replace them.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - CLAUDE.md
 host: 0.0.0.0
-url: "http://marek-kultys.github.io"
+url: "https://marekkultys.com"
 
 destination: ./_site
 
@@ -11,12 +28,18 @@ timezone: Europe/London
 # FREE TO CHANGE
 github: [metadata]
 encoding: UTF-8
+# ONE kramdown block only. YAML keeps the LAST duplicate key, so the second
+# kramdown: block that used to sit further down silently discarded input: GFM
+# and hard_wrap: false, and gfm_quirks sat at the top level where kramdown
+# never saw it. Everything kramdown needs belongs in this single block.
 kramdown:
   input: GFM
   hard_wrap: false
+  gfm_quirks: paragraph_end
+  math_engine: mathjax
+  syntax_highlighter: rouge
 future: true
 jailed: false
-gfm_quirks: paragraph_end
 
 
 # CANNOT CHANGE
@@ -27,7 +50,5 @@ incremental: false
 highlighter: rouge
 gist:
   noscript: false
-kramdown:
-  math_engine: mathjax
-  syntax_highlighter: rouge
+# kramdown settings are merged into the single block above.
 

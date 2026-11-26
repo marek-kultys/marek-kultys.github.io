@@ -1,19 +1,30 @@
-<!-- Chartbeat JavaScript -->
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="title" content="{{ site.data.mk.name }}">
-<meta name="description" content="{{ site.data.mk.description }} ">
+<meta name="title" content="{{ page_title }}">
+<meta name="description" content="{{ page_description }}">
 <meta name="author" content="{{ site.data.mk.name }}">
+
+{%- comment -%}
+Canonical. Without it /blog/ and /blog/index.html look like two pages holding the
+same content. The host comes from _data/mk.yml, the one place it is written down.
+{%- endcomment -%}
+<link rel="canonical" href="{{ site.data.mk.url }}{{ page.url }}">
 
 {% include favicon.html %}
 
 {% include social-media-cards.html %}
 
-<!-- Custom styles for this template -->
+{%- comment -%} The whole site's stylesheet, built from css/styles.scss. {%- endcomment -%}
 <link href="/css/styles.css" rel="stylesheet">
 
-<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+{%- comment -%}
+   IE8 shims. Dead weight, kept deliberately rather than deleted: see the note in
+   CLAUDE.md. oss.maxcdn.com no longer resolves, but the two <script> tags sit inside a
+   conditional comment that no browser released this decade evaluates, so nothing is
+   fetched and nothing is broken. The conditional below is NOT this kind of comment --
+   it is markup IE reads, so it must stay an HTML comment, not a Liquid one.
+{%- endcomment -%}
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>

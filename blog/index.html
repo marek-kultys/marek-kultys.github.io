@@ -1,6 +1,7 @@
 ---
 layout: main
-title: Marek Kultys | Blog
+title: Writing and speaking
+description: "Articles, papers, talks and interviews on designing for science and technology: data visualisation, AI products, design leadership and building teams."
 label: blog
 permalink: /blog/
 ---
@@ -8,15 +9,51 @@ permalink: /blog/
 	<div class="container">
 		<div class="container-two-thirds shift">
 			{% for post in site.posts %}
-				<div class="entry">
-					<h3><a href="{% if post.link %} {{ post.link }} {% else %} {{ post.url }} {% endif %}" class="tooltip" data-tooltip="Read post">{{ post.title }}</a></h3>
-					<h4>
-						<!-- Article {{ forloop.rindex }} &nbsp; &bull; &nbsp;  -->
+				{%- comment -%}
+					`opening` marks the first item only. It sits directly under the divider, so
+					it takes the tighter gap instead of a full section break. Driven by
+					forloop.first so it follows the top post rather than a hard-coded position.
+				{%- endcomment -%}
+				{%- comment -%}
+					Where this entry points, worked out ONCE and used by both the heading and
+					the thumbnail below. They used to disagree: the heading fell back to
+					post.url when `link:` was missing, the thumbnail did not, so a post written
+					the way CLAUDE.md asks for -- no `link:`, let the URL derive itself -- would
+					have given its thumbnail href="", which browsers resolve to the current
+					page. The thumbnail would have silently reloaded /blog/ instead of opening
+					the post.
+
+					`default` is the right filter rather than a hand-written conditional: Liquid
+					treats nil, false AND the empty string as absent, and the three unpublished
+					drafts carry an empty `link:` rather than none at all.
+
+					Note for the next person writing one of these notes: a Liquid comment is NOT
+					inert. Liquid still scans it for block tags, so an if-tag written out in
+					prose in here fails the whole build with "Syntax Error in tag". Describe the
+					tag, do not type it.
+				{%- endcomment -%}
+				{%- assign post_destination = post.link | default: post.url -%}
+				<div class="entry{% if forloop.first %} opening{% endif %}">
+					<h2 class="t-section"><a href="{{ post_destination }}" class="tooltip" data-tooltip="Read post">{{ post.title }}</a></h2>
+					<div class="t-meta">
 						{% include byline.html post=post %}
-					</h4>
+					</div>
 					{{ post.excerpt }}
+					{%- comment -%}
+						This single tag renders a thumbnail for EVERY post, so the page was
+						downloading 4.68 MB of images -- the heaviest page on the site -- before
+						the visitor had scrolled past the first entry. Only the top post stays
+						eager; the rest load as they come into view.
+
+						No width=/height= here, unlike everywhere else on the site: the src is
+						{{ post.image }}, so the file is not known until build time and its pixel
+						size cannot be read in Liquid without a plugin (GitHub Pages will not run
+						one). Putting the dimensions in each post's front matter would make the
+						image size a second hand-maintained fact that drifts, like `link:` already
+						does. So this one page still shifts a little as thumbnails arrive.
+					{%- endcomment -%}
 					{% if post.image %}
-						<a href="{{ post.link }}" class="image-link tooltip" data-tooltip="Read post"><img src="{{ post.image }}" class="shadow" alt="{{ post.title }}"></a>
+						<a href="{{ post_destination }}" class="image-link tooltip" data-tooltip="Read post"><img src="{{ post.image }}" class="shadow" alt="{{ post.title }}"{% unless forloop.first %} loading="lazy"{% endunless %}></a>
 					{% endif %}
 				</div>
 			{% endfor %}

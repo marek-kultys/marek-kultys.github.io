@@ -2,6 +2,7 @@
 layout: blog-post
 label: blog-post
 title: Sequence Bundles&#58; a Novel Method for Visualising, Discovering and Exploring Sequence Motifs
+description: "The peer-reviewed paper I led introducing Sequence Bundles, a new method for visualising sequence alignments, since extended in Nucleic Acids Research."
 date: August 2014
 link: https://bmcproc.biomedcentral.com/articles/10.1186/1753-6561-8-S2-S8
 image: /img/posts/24-08-2014/sequence-bundles.png
