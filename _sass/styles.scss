@@ -38,6 +38,14 @@ $medium-leading: 1.4*$leading-unit;
 $large-leading: 1.66*$leading-unit;
 $huge-leading: 2.4*$leading-unit;
 
+// Gap above a section heading. Deliberately in REM, not em, and this is load-bearing.
+// .entry sets margin-bottom: $huge-leading*2, which is 4.8em resolved against the 16px
+// body = 77px. A heading's own em resolves against ITS font-size, which is larger, so
+// 4.8em on a heading would come out far bigger and the two rhythms would not match.
+// rem pins both to the same 16px root. 4.8rem is the same 77px, by construction.
+$section-gap: 4.8rem;
+
+
 // Declare other styles
 $line-thickness: 1px;
 $border-radius: 4px;
@@ -158,6 +166,62 @@ h2, .t-headline { // page headline
    font-weight: 400;
    font-size: $large-type;
    line-height: $medium-leading;
+}
+
+// SECTION RHYTHM
+// Headings carry margin: 0 (see the type rule above), so every gap above a heading is
+// really the bottom margin of whatever precedes it. The site builds pages three ways and
+// they used to disagree: pages made of per-section .entry blocks got 77px, blog posts and
+// case studies got 26px where a heading followed a <p>, and 0px where a heading was the
+// first child of its container. This puts the same gap on the heading itself.
+//
+// Two collapsing behaviours are doing the work, and neither is an accident:
+//   - After a <p>, the p's 26px bottom margin and this top margin are adjacent siblings,
+//     so they collapse to the LARGER of the two -- 77px, not 103px.
+//   - Where the heading is the first child of a .container-* div with no padding or
+//     border, this margin collapses OUT of that div and applies above it instead, which
+//     lands the space in the same visible place.
+// So do not "fix" this by adding padding to those containers: padding would stop the
+// collapse and you would get two gaps stacked.
+//
+// h1 is excluded on purpose. It is the case-study hero heading and usually the first
+// thing in the article, where this margin would collapse to the top and push the whole
+// page down below the divider.
+// The [class] half is NOT redundant, and removing it silently breaks case studies.
+// The shared `margin: 0` rule above lists .t-section and .t-meta by class. A class scores
+// 0,1,0 and beats two element names (article h2 = 0,0,2), so every <h2 class="t-section">
+// -- which is 60 of the site's headings, i.e. every case-study section -- ignored the bare
+// selector and stayed at 0. Adding [class] scores 0,1,2 and wins. Blog posts happened to
+// work either way only because kramdown emits bare <h3> with no class at all.
+article h2, article h3,
+article h2[class], article h3[class] {
+   margin-top: $section-gap;
+}
+
+// Exception: the item that OPENS a page, sitting directly under the divider rather than
+// after content. A section gap there reads as a hole, not a break.
+//
+// Zero, not a smaller gap. Every other page already starts its first text 35px below the
+// divider because nothing there carries a top margin -- Contact's <ol>, Influences' and
+// the privacy page's first <p>, a case study's "Case study" label. Giving the opening
+// heading any margin at all makes the listings the only pages that start lower.
+// Marked by hand with .opening on the two listings (Case studies, Writing and speaking)
+// and the 404.
+//
+// It is marked explicitly rather than selected structurally, and that is the point. The
+// obvious `.entry:first-child > h2:first-child` ALSO matched Influences and Vivli, where
+// content resumes after an image in a new container whose first child is an .entry -- so
+// three mid-page headings silently dropped and Influences lost 101px. :first-child is
+// relative to the parent, not to the page.
+//
+// It matches whatever comes FIRST, not specifically a heading: a listing and the 404 open
+// with an h2, a blog post opens with its "Published in" byline, which would otherwise take
+// margin-top from `.entry .t-meta`. One marker, one rule, same result on all four.
+//
+// Specificity scores 0,3,0 and must outrank BOTH `article h2[class]` (0,1,2) and
+// `.entry .t-meta` (0,2,0) above.
+.entry.opening > :first-child {
+   margin-top: 0;
 }
 
 h3, .t-section { // section headings

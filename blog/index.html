@@ -9,7 +9,12 @@ permalink: /blog/
 	<div class="container">
 		<div class="container-two-thirds shift">
 			{% for post in site.posts %}
-				<div class="entry">
+				{%- comment -%}
+					`opening` marks the first item only. It sits directly under the divider, so
+					it takes the tighter gap instead of a full section break. Driven by
+					forloop.first so it follows the top post rather than a hard-coded position.
+				{%- endcomment -%}
+				<div class="entry{% if forloop.first %} opening{% endif %}">
 					<h2 class="t-section"><a href="{% if post.link %} {{ post.link }} {% else %} {{ post.url }} {% endif %}" class="tooltip" data-tooltip="Read post">{{ post.title }}</a></h2>
 					<div class="t-meta">
 						<!-- Article {{ forloop.rindex }} &nbsp; &bull; &nbsp;  -->

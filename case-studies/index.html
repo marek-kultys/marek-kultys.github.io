@@ -7,7 +7,11 @@ label: cases
 <section>
    <div class="container">
       <div class="container-two-thirds shift">
-         <div class="entry">
+         {%- comment -%}
+            `opening` marks the first listed case study only -- it sits directly under the
+            divider and takes the tighter gap. If you reorder these, move the class too.
+         {%- endcomment -%}
+         <div class="entry opening">
             <h2 class="t-section"><a href="/case-studies/evinova/" class="tooltip" data-tooltip="Read Evinova case study">{{ site.data.pages.case-study.evinova.heading }}</a></h2>
             <div class="t-meta">at {{ site.data.pages.case-study.evinova.company }} &nbsp; &bull; &nbsp; {{ site.data.pages.case-study.evinova.year }}</div>
             <p>
