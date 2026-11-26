@@ -198,6 +198,46 @@ article h2[class], article h3[class] {
    margin-top: $section-gap;
 }
 
+// Exception: a heading that opens the block directly after a DIVIDER. A divider is
+// already a section break, so adding the 77px gap on top of one stacks two breaks and
+// reads as a hole rather than a rhythm. The live site has always had these tight; the
+// section rule put 77px above all ten of them.
+//
+// :first-child is required at EVERY level, and that is the whole point. On a case study
+// the post-divider container holds several .container-two-thirds blocks -- The Challenge,
+// then images, then The Solution -- and each of those blocks starts with a heading. A
+// loose `.divider-row + .container h2:first-child` would zero The Solution too, exactly
+// the over-match that `.entry:first-child > h2:first-child` caused earlier. Requiring the
+// chain to start at the container keeps it to the one heading that touches the divider.
+//
+// Only two shapes exist in the markup: the heading is the container's own first child
+// (the Appendix blocks), or it is the first child of the container's first child (every
+// Challenge heading). Both are written out rather than collapsed into a descendant
+// selector, so a third shape has to be added deliberately.
+//
+// Scores 0,4,1 and 0,3,1, both above `article h2[class]` at 0,1,2.
+.divider-row + .container > h2:first-child,
+.divider-row + .container > h3:first-child,
+.divider-row + .container > :first-child > h2:first-child,
+.divider-row + .container > :first-child > h3:first-child {
+   margin-top: 0;
+}
+
+// Exception: a heading directly after another heading. That is a label and its title --
+// "Appendix" above the appendix's real heading, on Immunocore and Vivli -- not two
+// sections. The pair belongs together and the gap goes above the pair, which the rule
+// above has already set to 0.
+//
+// The [class] variants are not redundant, for the same reason they are not redundant on
+// the section rule itself: the second heading in both pairs happens to carry no class, so
+// the bare selectors at 0,0,3 beat `article h2` at 0,0,2 -- but a classed one would need
+// 0,1,3 to beat `article h2[class]` at 0,1,2.
+article h2 + h2, article h2 + h3, article h3 + h2, article h3 + h3,
+article h2 + h2[class], article h2 + h3[class],
+article h3 + h2[class], article h3 + h3[class] {
+   margin-top: 0;
+}
+
 // Exception: the item that OPENS a page, sitting directly under the divider rather than
 // after content. A section gap there reads as a hole, not a break.
 //
@@ -338,6 +378,24 @@ pre { // code block
       padding: 0;
       overflow-wrap: normal; // a block scrolls sideways; it must not re-wrap
    }
+}
+
+// EMBEDS
+.twitter-tweet {
+   // This is the quoted text inside the Immunocore tweet embed, and it is only ever
+   // VISIBLE when X's script fails to replace the blockquote with its card: the visitor
+   // blocks platform.twitter.com, the script is slow, or X throttles them and returns an
+   // iframe sized to 0x0 -- all three observed. The fallback then shows, and it contains
+   // "pic.twitter.com/fIQX8VoJqh": 26 characters with no space or hyphen to break at, and
+   // neither a slash nor a dot is a wrap opportunity.
+   //
+   // Measured at 320px: the link reached 345px on a 320px page. html{overflow-x:hidden}
+   // does not scroll, it CLIPS, so the end of the string was cut off with no scrollbar to
+   // say so. Same failure and same fix as `code` above -- see that note too.
+   //
+   // overflow-wrap is inherited, so this one declaration covers the link without needing
+   // a descendant selector.
+   overflow-wrap: break-word;
 }
 
 div.highlighter-rouge { // Rouge's outer wrapper owns the block spacing.

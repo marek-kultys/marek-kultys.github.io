@@ -1,3 +1,9 @@
-<div class="container">
+{%- comment -%}
+   `divider-row` carries no styling of its own. It exists so the stylesheet can say
+   "the first heading after a divider" -- a horizontal rule is already a section
+   break, so the 77px gap above a heading would land on top of one and read as a
+   hole. See SECTION RHYTHM in _sass/styles.scss.
+{%- endcomment -%}
+<div class="container divider-row">
    <span class="divider"></span>
 </div>
