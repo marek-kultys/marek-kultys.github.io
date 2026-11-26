@@ -87,10 +87,12 @@ label: influences
             </div>
          </div>
       </div>
-      <!-- Empty by design, and it must stay closed rather than removed. Neat emits
-           .container-two-thirds:last-child { margin-right: 0 }, so deleting this
-           column would promote the caption block above it to :last-child and
-           silently change that block's right margin. -->
+      {%- comment -%}
+         Empty by design, and it must stay closed rather than removed. Neat emits
+         .container-two-thirds:last-child { margin-right: 0 }, so deleting this
+         column would promote the caption block above it to :last-child and
+         silently change that block's right margin.
+      {%- endcomment -%}
       <div class="container-two-thirds shift">
       </div>
    </div>

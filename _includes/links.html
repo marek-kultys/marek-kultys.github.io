@@ -5,7 +5,14 @@
             <li {% if page.label contains 'case' %} class="strong" {% endif %}><a href="{{ site.data.pages.case-study.link }}" class="tooltip" data-tooltip="View case studies">{{ site.data.pages.case-study.headline }}</a></li>
             <li {% if page.label contains 'blog' %} class="strong" {% endif %}><a href="{{ site.data.pages.blog.link }}" class="tooltip" data-tooltip="View blog posts">{{ site.data.pages.blog.headline }}</a></li>
             <li {% if page.label == 'influences' %} class="strong" {% endif %}><a href="{{ site.data.pages.influences.link }}" class="tooltip" data-tooltip="View my influences">{{ site.data.pages.influences.headline }}</a></li>
-            <!-- <li {% if page.label contains 'apps' %} class="strong" {% endif %}><a href="{{ site.data.pages.apps.link }}" class="tooltip" data-tooltip="View page with apps">{{ site.data.pages.apps.headline }}</a></li> -->
+            {%- comment -%}
+               The apps nav item, parked until that page exists. Its matching key in
+               _data/pages.yml is commented out too, so site.data.pages.apps is nil.
+               As an HTML comment this still ran its Liquid on every page and shipped the
+               markup to the browser, advertising an unlaunched page in the source of all
+               33 pages. A Liquid comment is not parsed at all, so it costs nothing.
+               <li {% raw %}{% if page.label contains 'apps' %} class="strong" {% endif %}{% endraw %}><a href="...apps.link">...apps.headline</a></li>
+            {%- endcomment -%}
             <li {% if page.label == 'contact' %} class="strong" {% endif %}><a href="{{ site.data.pages.contact.link }}" class="tooltip" data-tooltip="Get in touch">{{ site.data.pages.contact.headline }}</a></li>
          </ol>
       </div>

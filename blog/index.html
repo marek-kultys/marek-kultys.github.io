@@ -17,7 +17,6 @@ permalink: /blog/
 				<div class="entry{% if forloop.first %} opening{% endif %}">
 					<h2 class="t-section"><a href="{% if post.link %} {{ post.link }} {% else %} {{ post.url }} {% endif %}" class="tooltip" data-tooltip="Read post">{{ post.title }}</a></h2>
 					<div class="t-meta">
-						<!-- Article {{ forloop.rindex }} &nbsp; &bull; &nbsp;  -->
 						{% include byline.html post=post %}
 					</div>
 					{{ post.excerpt }}

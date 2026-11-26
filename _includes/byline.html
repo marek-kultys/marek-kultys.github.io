@@ -1,5 +1,11 @@
-<!-- Day, month name and year -->
-<!-- {{ include.post.date | date: "%-d %B %Y" }} -->
-
-<!-- Only month name and year -->
+{%- comment -%}
+   Month and year only, never a day. Post dates are written as e.g. "November 2026" and
+   Jekyll parses that to the 1st, so a "%-d" here would print a day the author never
+   wrote -- and one that disagrees with _layouts/blog-post.html, which prints "%B %Y".
+   The day-level format this file used to carry as a commented-out line is kept here as
+   a warning rather than as something to switch back on:
+      {{ "{{" }} include.post.date | date: "%-d %B %Y" }}
+   Both the label and that line used to be HTML comments, so they shipped to the browser
+   on all 18 post listings. Liquid comments do not.
+{%- endcomment -%}
 {{ include.post.date | date: "%B %Y" }}
