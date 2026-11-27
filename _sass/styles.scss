@@ -386,42 +386,24 @@ pre { // code block
 }
 
 // EMBEDS
+// Everything here styles X's OWN markup for the Immunocore tweet, which is only ever
+// visible as the fallback: when the visitor blocks platform.twitter.com, when the
+// script is slow, or when X throttles and returns a 0x0 iframe. All three observed,
+// the last one repeatedly. X's script DELETES this blockquote the moment the real
+// card arrives, so nothing in this rule can reach the embed.
 .twitter-tweet {
-   // This is the quoted text inside the Immunocore tweet embed, and it is only ever
-   // VISIBLE when X's script fails to replace the blockquote with its card: the visitor
-   // blocks platform.twitter.com, the script is slow, or X throttles them and returns an
-   // iframe sized to 0x0 -- all three observed. The fallback then shows, and it contains
-   // "pic.twitter.com/fIQX8VoJqh": 26 characters with no space or hyphen to break at, and
-   // neither a slash nor a dot is a wrap opportunity.
-   //
-   // Measured at 320px: the link reached 345px on a 320px page. html{overflow-x:hidden}
-   // does not scroll, it CLIPS, so the end of the string was cut off with no scrollbar to
-   // say so. Same failure and same fix as `code` above -- see that note too.
-   //
-   // overflow-wrap is inherited, so this one declaration covers the link without needing
-   // a descendant selector.
+   // The fallback contains "pic.twitter.com/fIQX8VoJqh": 26 characters with no space or
+   // hyphen, and neither a slash nor a dot is a wrap opportunity. At 320px it reached
+   // 345px, and html{overflow-x:hidden} does not scroll, it CLIPS -- the end was cut off
+   // with no scrollbar to say so. Same failure and fix as `code` above.
    overflow-wrap: break-word;
 
-   // The attribution -- "-- Nasdaq Exchange (@NasdaqExchange) February 5, 2021" -- is a
-   // bare text node in X's own markup, a sibling of the quoted <p> with no element of its
-   // own. The rule above only names elements, so that text matched nothing and fell back
-   // to the browser default: Times at 16px, beside Barlow. Measured on the live page.
-   //
-   // Font goes on the blockquote and is inherited, because there is no selector that can
-   // reach a bare text node. That looks careless -- a broad font rule to fix one line --
-   // and it is not: X's script DELETES this blockquote the moment the real card arrives,
-   // so the rule only ever paints the fallback, and it cannot leak onto the embed.
-   //
-   // Do not narrow this to `.twitter-tweet p`. The <p> already inherits Barlow from the
-   // element list above; the text node is the whole problem, and a descendant selector
-   // cannot match it.
+   // The attribution line is a bare text node with no element of its own, so the
+   // font-family rule further up, which only names elements, missed it: it rendered in
+   // Times at 16px in the browser's black. Both properties go on the blockquote and are
+   // inherited, because no selector can reach a bare text node. Do not narrow this to
+   // `.twitter-tweet p`, which already inherits and was never the problem.
    font-family: $body-font;
-
-   // Same defect, second property: the bare text took the browser's black, rgb(0,0,0),
-   // where the site's ink is $black, rgb(0,0,50) -- a slightly blue near-black. Subtle
-   // next to the serif, but it is the same text node failing to match the same rule, so
-   // it is fixed here rather than left as a loose end. The links inside the line already
-   // resolve to the same value from `a`, so nothing else moves.
    color: $black;
 }
 
