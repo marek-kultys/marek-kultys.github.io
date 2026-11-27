@@ -55,6 +55,11 @@ $underline: $line-thickness $line-style $black;
 // and renders instantly. Barlow has no monospace cut.
 $mono-font: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
 
+// The site's text face. Nothing sets a font on <body> -- see the note above the
+// font-family rule below -- so every element that needs Barlow names it explicitly,
+// and they all name it from here.
+$body-font: 'Barlow', sans-serif;
+
 
 
 
@@ -137,7 +142,7 @@ a {
 // <body>, so a bare <div> would fall back to the browser's default serif.
 p, h1, h2, h3, h4, h5, ol, ul, li,
 .t-display, .t-headline, .t-section, .t-meta, .t-note {
-   font-family: 'Barlow', sans-serif;
+   font-family: $body-font;
    color: $black;
    margin: 0px;
 }
@@ -396,6 +401,28 @@ pre { // code block
    // overflow-wrap is inherited, so this one declaration covers the link without needing
    // a descendant selector.
    overflow-wrap: break-word;
+
+   // The attribution -- "-- Nasdaq Exchange (@NasdaqExchange) February 5, 2021" -- is a
+   // bare text node in X's own markup, a sibling of the quoted <p> with no element of its
+   // own. The rule above only names elements, so that text matched nothing and fell back
+   // to the browser default: Times at 16px, beside Barlow. Measured on the live page.
+   //
+   // Font goes on the blockquote and is inherited, because there is no selector that can
+   // reach a bare text node. That looks careless -- a broad font rule to fix one line --
+   // and it is not: X's script DELETES this blockquote the moment the real card arrives,
+   // so the rule only ever paints the fallback, and it cannot leak onto the embed.
+   //
+   // Do not narrow this to `.twitter-tweet p`. The <p> already inherits Barlow from the
+   // element list above; the text node is the whole problem, and a descendant selector
+   // cannot match it.
+   font-family: $body-font;
+
+   // Same defect, second property: the bare text took the browser's black, rgb(0,0,0),
+   // where the site's ink is $black, rgb(0,0,50) -- a slightly blue near-black. Subtle
+   // next to the serif, but it is the same text node failing to match the same rule, so
+   // it is fixed here rather than left as a loose end. The links inside the line already
+   // resolve to the same value from `a`, so nothing else moves.
+   color: $black;
 }
 
 div.highlighter-rouge { // Rouge's outer wrapper owns the block spacing.
