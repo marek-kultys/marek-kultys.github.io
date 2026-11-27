@@ -55,6 +55,11 @@ $underline: $line-thickness $line-style $black;
 // and renders instantly. Barlow has no monospace cut.
 $mono-font: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
 
+// The site's text face. Nothing sets a font on <body> -- see the note above the
+// font-family rule below -- so every element that needs Barlow names it explicitly,
+// and they all name it from here.
+$body-font: 'Barlow', sans-serif;
+
 
 
 
@@ -137,7 +142,7 @@ a {
 // <body>, so a bare <div> would fall back to the browser's default serif.
 p, h1, h2, h3, h4, h5, ol, ul, li,
 .t-display, .t-headline, .t-section, .t-meta, .t-note {
-   font-family: 'Barlow', sans-serif;
+   font-family: $body-font;
    color: $black;
    margin: 0px;
 }
@@ -381,21 +386,25 @@ pre { // code block
 }
 
 // EMBEDS
+// Everything here styles X's OWN markup for the Immunocore tweet, which is only ever
+// visible as the fallback: when the visitor blocks platform.twitter.com, when the
+// script is slow, or when X throttles and returns a 0x0 iframe. All three observed,
+// the last one repeatedly. X's script DELETES this blockquote the moment the real
+// card arrives, so nothing in this rule can reach the embed.
 .twitter-tweet {
-   // This is the quoted text inside the Immunocore tweet embed, and it is only ever
-   // VISIBLE when X's script fails to replace the blockquote with its card: the visitor
-   // blocks platform.twitter.com, the script is slow, or X throttles them and returns an
-   // iframe sized to 0x0 -- all three observed. The fallback then shows, and it contains
-   // "pic.twitter.com/fIQX8VoJqh": 26 characters with no space or hyphen to break at, and
-   // neither a slash nor a dot is a wrap opportunity.
-   //
-   // Measured at 320px: the link reached 345px on a 320px page. html{overflow-x:hidden}
-   // does not scroll, it CLIPS, so the end of the string was cut off with no scrollbar to
-   // say so. Same failure and same fix as `code` above -- see that note too.
-   //
-   // overflow-wrap is inherited, so this one declaration covers the link without needing
-   // a descendant selector.
+   // The fallback contains "pic.twitter.com/fIQX8VoJqh": 26 characters with no space or
+   // hyphen, and neither a slash nor a dot is a wrap opportunity. At 320px it reached
+   // 345px, and html{overflow-x:hidden} does not scroll, it CLIPS -- the end was cut off
+   // with no scrollbar to say so. Same failure and fix as `code` above.
    overflow-wrap: break-word;
+
+   // The attribution line is a bare text node with no element of its own, so the
+   // font-family rule further up, which only names elements, missed it: it rendered in
+   // Times at 16px in the browser's black. Both properties go on the blockquote and are
+   // inherited, because no selector can reach a bare text node. Do not narrow this to
+   // `.twitter-tweet p`, which already inherits and was never the problem.
+   font-family: $body-font;
+   color: $black;
 }
 
 div.highlighter-rouge { // Rouge's outer wrapper owns the block spacing.

@@ -6,5 +6,15 @@
 
 @import "styles";
 
-// Import Google Fonts
-@import url('https://fonts.googleapis.com/css?family=Barlow:200,400,600&subset=latin-ext');
+// Import Google Fonts.
+//
+// display=swap is not cosmetic. Without it Google returns no font-display rule at all,
+// which means the browser's default: text stays INVISIBLE for up to three seconds while
+// Barlow downloads, then appears. On a slow connection the page is blank but laid out.
+// With the parameter Google returns font-display: swap on all three weights, so the
+// text paints immediately in the fallback sans and re-renders when Barlow arrives.
+//
+// The trade is a visible reflow instead of a blank page. That is the right way round
+// for a site that is mostly words: readable late-styled text beats styled text nobody
+// can read yet. Verified by fetching the URL with and without the parameter.
+@import url('https://fonts.googleapis.com/css?family=Barlow:200,400,600&subset=latin-ext&display=swap');
