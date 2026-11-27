@@ -19,11 +19,16 @@ same content. The host comes from _data/mk.yml, the one place it is written down
 <link href="/css/styles.css" rel="stylesheet">
 
 {%- comment -%}
-   IE8 shims. Dead weight, kept deliberately rather than deleted: see the note in
-   CLAUDE.md. oss.maxcdn.com no longer resolves, but the two <script> tags sit inside a
-   conditional comment that no browser released this decade evaluates, so nothing is
-   fetched and nothing is broken. The conditional below is NOT this kind of comment --
-   it is markup IE reads, so it must stay an HTML comment, not a Liquid one.
+   IE8 shims. Dead weight, kept deliberately rather than deleted.
+
+   They cost nothing: the two <script> tags sit inside a downlevel-hidden conditional
+   comment, which only IE9 and earlier ever parsed. Every browser since treats the whole
+   block as a comment and fetches neither file. Checked 2026-11-27: both URLs still
+   return 200, so if an IE8 somehow arrived the shims would even work -- but no visitor
+   in this decade reaches them either way.
+
+   The conditional below is NOT a Liquid comment and must not become one: it is markup
+   that old IE reads, so it has to stay an HTML comment to do its job.
 {%- endcomment -%}
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>

@@ -5,8 +5,9 @@ sitemap: false
 Hand-written sitemap. Deliberately NOT the jekyll-sitemap plugin, by decision.
 
 The host comes from _data/mk.yml so there is ONE source of truth for it. Do not
-hardcode a domain here: mk.yml currently says http, the live site enforces
-https, and the day mk.yml is corrected this file must follow it automatically.
+hardcode a domain here. mk.yml said http when this file was written and the live
+site enforced https, so the two disagreed; mk.yml was corrected and this file
+followed it without being touched, which is the point. Keep it that way.
 
 The extension test is load-bearing, and the way it is written is deliberate.
 site.pages carries every file with front matter, which here includes
