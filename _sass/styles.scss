@@ -749,12 +749,29 @@ img {
    margin-top: $nano-leading*1.7;
 }
 
+// Wrapper around a display image or video. Symmetrical on purpose, and the symmetry is
+// the fix.
+//
+// This was $huge-leading*2.4 at the bottom against $huge-leading at the top: 92px below
+// an image and 38px above it. 92px is already larger than a full section break, so every
+// picture pushed the text under it a section and a half away while hugging the text above
+// -- and where the next block opened with a heading, the heading's own 77px section gap
+// landed on top of the 92px and the gap measured 169px. Two section breaks for one break
+// in the content.
+//
+// Matching the two margins fixes both cases at once: an image now sits 38px clear of the
+// text on either side, and a following heading reads as one break at 115px rather than
+// two. Do NOT restore the 2.4 multiplier to "give images room" -- the room was never the
+// problem, the asymmetry was, and the heading gap compounds it.
+//
+// Portrait keeps its own smaller value because the caption stacks BETWEEN the image and
+// the next block there, so real content already separates them and no extra air is needed.
 .block-margin {
    // border: 1px dotted black;
    margin-top: $huge-leading;
    margin-bottom: $large-leading;
    @include media($landscape) {
-      margin-bottom: $huge-leading*2.4;
+      margin-bottom: $huge-leading;
    }
 }
 
